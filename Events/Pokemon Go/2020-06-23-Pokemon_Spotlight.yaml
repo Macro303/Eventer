@@ -1,0 +1,12 @@
+Name: "Pokemon Spotlight Hour"
+Type: "POKEMON_SPOTLIGHT_HOUR"
+Start Time: "2020-06-23T18:00:00"
+End Time: "2020-06-23T19:00:00"
+Timezone: null
+Wild:
+    - "Clefairy [Shiny]"
+Research: []
+Eggs: {}
+Raids: {}
+Bonus:
+    - "2x Catch XP"

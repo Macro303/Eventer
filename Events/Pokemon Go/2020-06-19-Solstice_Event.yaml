@@ -1,0 +1,15 @@
+Name: "Solstice Event"
+Type: "GENERAL_EVENTS"
+Start Time: "2020-06-19T08:00:00"
+End Time: "2020-06-24T22:00:00"
+Timezone: null
+Wild:
+    - "Clefairy [Shiny]"
+    - "Sunkern [Shiny]"
+    - "Lunatune [Shiny]"
+    - "Solrock [Shiny]"
+Research: []
+Eggs: {}
+Raids: {}
+Bonus:
+    - "2x Catch Stardust"

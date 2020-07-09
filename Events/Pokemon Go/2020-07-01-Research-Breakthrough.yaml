@@ -1,0 +1,11 @@
+Name: "July Research Breakthrough"
+Type: "RESEARCH_BREAKTHROUGH"
+Start Time: "2020-07-01T13:00:00"
+End Time: "2020-08-01T13:00:00"
+Timezone: "America/Los_Angeles"
+Wild: []
+Research:
+    - "Larvitar [Shiny]"
+Eggs: {}
+Raids: {}
+Bonus: []

@@ -1,0 +1,31 @@
+Name: "One Year Later, Part Two"
+Type: "BRILLIANT_EVENT"
+Start Time: "2020-06-16T11:00:00"
+End Time: "2020-06-23T11:00:00"
+Timezone: "America/Los_Angeles"
+Family: "Ministry of Magic"
+Pages:
+    - "Courtroom Ten"
+    - "Ministry Atrium"
+    - "Ministry Atrium II"
+Foundables:
+    - "Daily Prophet Stand"
+    - "Bogrod"
+    - "Flock of Interdepartmental Memos"
+    - "Mad-Eye Moody"
+    - "Tank of Brains"
+    - "Ministry Employee Newt Scamander"
+Event Foundables:
+    Encounter:
+        - "Senior Minister Hermione Granger"
+        - "Minister Kingsley Shacklebolt"
+    Portkey:
+        - "Calamity Incident Map [1.5km]"
+    Event Task:
+        - "Registry Research Board"
+        - "Pile of Runestones"
+    Fortress:
+        - "Jr. Undersecretary Constance Pickering"
+Bonuses:
+    - "Portkeys are 1.5km"
+    - "Spell Energy on the Map will give 5 Spell Energy"

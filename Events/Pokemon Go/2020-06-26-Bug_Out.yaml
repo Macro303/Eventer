@@ -1,0 +1,14 @@
+Name: "Bug Out"
+Type: "GENERAL_EVENTS"
+Start Time: "2020-06-26T08:00:00"
+End Time: "2020-07-01T22:00:00"
+Timezone: null
+Wild:
+    - "Scyther [Shiny]"
+    - "Venipede"
+    - "Dwebble [Shiny]"
+Research: []
+Eggs: {}
+Raids: {}
+Bonus:
+    - "2x Catch XP"

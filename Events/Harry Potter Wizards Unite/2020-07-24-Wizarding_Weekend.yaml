@@ -1,0 +1,12 @@
+Name: "July Wizarding Weekend"
+Type: "WIZARDING_WEEKEND"
+Start Time: "2020-07-24T11:00:00"
+End Time: "2020-07-27T11:00:00"
+Timezone: "America/Los_Angeles"
+Family: "Legends of Hogwarts"
+Pages:
+    - "Classified"
+Foundables:
+    - "Classified"
+Event Foundables: {}
+Bonuses: []

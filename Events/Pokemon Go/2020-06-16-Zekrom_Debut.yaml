@@ -1,0 +1,12 @@
+Name: "Zekrom Debut"
+Type: "RAID_BATTLES"
+Start Time: "2020-06-16T13:00:00"
+End Time: "2020-07-07T13:00:00"
+Timezone: "America/Los_Angeles"
+Wild: []
+Research: []
+Eggs: {}
+Raids:
+    5*:
+        - "Zekrom"
+Bonus: []
