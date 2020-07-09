@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import logging
 from datetime import datetime
-from typing import Optional, Set
 from enum import Enum, auto
+from typing import Optional, Set
 
 from pytz import timezone
 
@@ -14,7 +14,8 @@ class EventType(Enum):
 
 
 class Event:
-    def __init__(self, name: str, event_type: EventType, start_time: str, end_time: str, time_zone: Optional[str] = None):
+    def __init__(self, name: str, event_type: EventType, start_time: str, end_time: str,
+                 time_zone: Optional[str] = None):
         self.name = name
         self.event_type = event_type
         self.time_zone = time_zone or 'Pacific/Auckland'
@@ -25,13 +26,15 @@ class Event:
         return datetime.strptime(self.start_time_str, '%Y-%m-%dT%H:%M:%S')
 
     def start_time_localized(self) -> str:
-        return timezone(self.time_zone).localize(self.start_time()).astimezone(timezone('Pacific/Auckland')).isoformat(sep='T')
+        return timezone(self.time_zone).localize(self.start_time()).astimezone(timezone('Pacific/Auckland')) \
+            .isoformat(sep='T')
 
     def end_time(self) -> datetime:
         return datetime.strptime(self.end_time_str, '%Y-%m-%dT%H:%M:%S')
 
     def end_time_localized(self) -> str:
-        return timezone(self.time_zone).localize(self.end_time()).astimezone(timezone('Pacific/Auckland')).isoformat(sep='T')
+        return timezone(self.time_zone).localize(self.end_time()).astimezone(timezone('Pacific/Auckland')) \
+            .isoformat(sep='T')
 
     def description(self) -> str:
         return ''

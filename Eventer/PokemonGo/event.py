@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 import logging
-from datetime import datetime
-from typing import Optional, List, Dict
 from enum import Enum, auto
-
-from pytz import timezone
+from typing import Optional, List, Dict
 
 from Eventer.base_event import Event as BaseEvent
 

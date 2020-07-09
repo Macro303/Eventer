@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 import logging
-from datetime import datetime
-from typing import Optional, List, Dict
 from enum import Enum, auto
-
-from pytz import timezone
+from typing import Optional, List, Dict
 
 from Eventer.base_event import Event as BaseEvent
 
@@ -19,7 +16,10 @@ class EventType(Enum):
 
 
 class Event(BaseEvent):
-    def __init__(self, name: str, event_type: EventType, start_time: str, end_time: str, time_zone: Optional[str] = None, family: Optional[str] = None, pages: Optional[List[str]] = None, foundables: Optional[List[str]] = None, event_foundables: Optional[Dict[str, List[str]]] = None, bonuses: Optional[List[str]] = None):
+    def __init__(self, name: str, event_type: EventType, start_time: str, end_time: str,
+                 time_zone: Optional[str] = None, family: Optional[str] = None, pages: Optional[List[str]] = None,
+                 foundables: Optional[List[str]] = None, event_foundables: Optional[Dict[str, List[str]]] = None,
+                 bonuses: Optional[List[str]] = None):
         super().__init__(name, event_type, start_time, end_time, time_zone)
         self.family = family
         self.pages = pages or []

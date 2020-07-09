@@ -1,21 +1,22 @@
 #!/usr/bin/python3
-import logging
 import copy
-from typing import Set, Dict, List
+import logging
 from datetime import datetime
+from typing import Set
 
 import yaml
 from googleapiclient.discovery import build
 
-from Eventer import EVENT_DIR, get_creds, CONFIG, list_sheets, clean_filename, list_events
-from Eventer.base_event import Attendee
+from Eventer import EVENT_DIR, get_creds, CONFIG, list_sheets, clean_filename
 from Eventer.WizardsUnite.event import Event, EventType
+from Eventer.base_event import Attendee
 
 LOGGER = logging.getLogger(__name__)
 GAME_TITLE = 'Harry Potter: Wizards Unite'
 GAME_EVENT_DIR = EVENT_DIR.joinpath(clean_filename(GAME_TITLE))
 if not GAME_EVENT_DIR.exists():
     GAME_EVENT_DIR.mkdir(parents=True, exist_ok=True)
+
 
 def load_attendees() -> Set[Attendee]:
     if not CONFIG[GAME_TITLE]['Google Calendar ID']:
@@ -49,6 +50,7 @@ def load_attendees() -> Set[Attendee]:
         ))
     return attendees
 
+
 def load_events() -> Set[Event]:
     events = set()
     files = [p for p in GAME_EVENT_DIR.iterdir() if p.is_file() and p.name.endswith('.yaml')]
@@ -69,7 +71,8 @@ def load_events() -> Set[Event]:
             )
             days_dif = (datetime.today() - event.end_time()).days
             if days_dif > 14:
-                LOGGER.warning(f"Skipping Old Event `{event.start_time().strftime('%Y-%m-%d')}|{event.name}` => {days_dif} days old")
+                LOGGER.warning(f"Skipping Old Event `{event.start_time().strftime('%Y-%m-%d')}|"
+                               f"{event.name}` => {days_dif} days old")
                 continue
             if (event.end_time() - event.start_time()).days > 8:
                 temp = copy.deepcopy(event)

@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import logging
 import pickle
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 import yaml
 from google.auth.transport.requests import Request
@@ -80,6 +80,7 @@ def list_sheets(service, game_title: str):
     results = service.spreadsheets().values().get(spreadsheetId=CONFIG['Google Sheets ID'], range=game_title).execute()
     return results.get('values', [])
 
+
 def list_events(service, game_title: str):
     today = datetime.today()
     month = today.month - 2
@@ -88,8 +89,11 @@ def list_events(service, game_title: str):
     LOGGER.info(f"Getting all the {game_title} Events after {start.strftime('%Y-%m-%d')}")
 
     # Call the Calendar API
-    events_result = service.events().list(calendarId=CONFIG[game_title]['Google Calendar ID'], timeMin=start.isoformat() + 'Z', singleEvents=True, orderBy='startTime').execute()
+    events_result = service.events().list(calendarId=CONFIG[game_title]['Google Calendar ID'],
+                                          timeMin=start.isoformat() + 'Z', singleEvents=True,
+                                          orderBy='startTime').execute()
     return events_result.get('items', [])
+
 
 def clean_filename(filename: str) -> str:
     return filename.replace(':', '')

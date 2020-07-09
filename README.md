@@ -56,6 +56,6 @@ Running with the `-t` or `--test` argument will not create the Google Calendar E
 
 ## Socials
 [![Discord | The Playground](https://discord.com/api/v6/guilds/618581423070117932/widget.png?style=banner2)](https://discord.gg/nqGMeGg)  
-[![Discord | Catan: Wellington Explorer](https://discord.com/api/v6/guilds/728385327294840892/widget.png?style=banner2)](https://discord.gg/kFyCveQ)
-[![Discord | Wizards Unite - Wellington](https://discord.com/api/v6/guilds/577714667535728670/widget.png?style=banner2)](https://discord.gg/dy3ZhkT)
-[![Discord | WLG Raids & Sightings](https://discord.com/api/v6/guilds/328347295378833408/widget.png?style=banner2)](https://discord.gg/47gyFPE)
+ - Catan: Wellington Explorers [Discord Invite](https://discord.gg/kFyCveQ)
+ - Wizards Unite - Wellington [Discord Invite](https://discord.gg/dy3ZhkT)
+ - WLG Raids & Sightings [Discord Invite](https://discord.gg/47gyFPE)
