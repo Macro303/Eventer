@@ -55,8 +55,6 @@ def main():
 
     service = build('calendar', 'v3', credentials=get_creds(), cache_discovery=False)
     for game_title, file_events in all_events.items():
-        LOGGER.info(f"Game Title: {game_title}")
-        LOGGER.info(f"Attendees: {attendees}")
         if not CONFIG[game_title]['Google Calendar ID']:
             continue
 
