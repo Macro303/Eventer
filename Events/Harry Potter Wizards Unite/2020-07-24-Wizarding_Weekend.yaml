@@ -5,8 +5,16 @@ End Time: "2020-07-27T11:00:00"
 Timezone: "America/Los_Angeles"
 Family: "Legends of Hogwarts"
 Pages:
-    - "Classified"
+    - "Potions Classroom"
+    - "Room of Requirement I"
+    - "Yule Ball Great Hall"
+    - "Hogwarts Grounds"
+    - "Chess Chamber"
 Foundables:
-    - "Classified"
+    - "Hedwig"
+    - "Young Ginny Weasley"
+    - "Hagrid and Madame Maxime"
+    - "Young Remus Lupin"
+    - "Albus Dumbledore"
 Event Foundables: {}
 Bonuses: []
