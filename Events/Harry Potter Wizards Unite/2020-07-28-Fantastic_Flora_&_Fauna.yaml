@@ -1,22 +1,25 @@
-Name: "Baby Beasts, Part Two"
+Name: "Fantastic Flora & Fauna, Part Two"
 Type: "BRILLIANT_EVENT"
-Start Time: "2020-07-14T11:00:00"
-End Time: "2020-07-21T11:00:00"
+Start Time: "2020-07-28T11:00:00"
+End Time: "2020-08-04T11:00:00"
 Timezone: "America/Los_Angeles"
-Family: "Care of Magical Creatures"
-Pages:
-    - "Classified"
-Foundables:
-    - "Classified"
+Family: null
+Pages: []
+Foundables: []
 Event Foundables:
-    Encounter:
-        - "Classified"
-    Portkey:
-        - "Classified [1.5km]"
-    Event Task:
-        - "Classified"
-    Fortress:
-        - "Classified"
+  Encounter:
+    - "Brilliant Newt Scamander"
+    - "Brilliant Buckbeak"
+    - "Brilliant Unicorn"
+  Portkey:
+    - "Fire Seed Bush [1.5km]"
+  Event Task:
+    - "Dragonhide Gloves"
+    - "Dragon Claw"
+    - "Ukranian Ironbelly"
+  Fortress:
+    - "Fire Crab"
 Bonuses:
-    - "Portkeys are 1.5km"
-    - "Spell Energy on the Map will give 5 Spell Energy"
+  - "Portkeys are 1.5km"
+  - "Spell Energy on the Map will give 5 Spell Energy"
+  - "Returning `Brilliant Buckbeak` & `Brilliant Unicorn` will also grant fragments for Foundables from Part 1"
