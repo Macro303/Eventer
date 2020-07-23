@@ -1,0 +1,22 @@
+Name: "Unova Week"
+Type: "GENERAL_EVENTS"
+Start Time: "2020-08-14T13:00:00"
+End Time: "2020-08-21T13:00:00"
+Timezone: "America/Los_Angeles"
+Wild:
+  - "Sewaddle"
+  - "Cottonee"
+  - "Emolga"
+  - "Bouffalant (Regional to NYC)"
+Research: []
+Eggs:
+  7*:
+    - "Sewaddle"
+    - "Cottonee"
+    - "Emolga"
+Raids:
+  1*:
+    - "Roggenrola [Shiny]"
+  5*:
+    - "Genesect [Shiny]"
+Bonus: []

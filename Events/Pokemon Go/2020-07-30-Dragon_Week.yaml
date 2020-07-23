@@ -1,0 +1,27 @@
+Name: "Dragon Week"
+Type: "GENERAL_EVENTS"
+Start Time: "2020-07-30T13:00:00"
+End Time: "2020-08-07T13:00:00"
+Timezone: "America/Los_Angeles"
+Wild:
+  - "Alolan Exeggutor [Shiny]"
+  - "Horsea [Shiny]"
+  - "Dratini [Shiny]"
+  - "Trapinch [Shiny]"
+  - "Swablu [Shiny]"
+  - "Bagon [Shiny]"
+  - "Gible [Shiny]"
+Research:
+  - "2x Deino [Shiny]"
+Eggs:
+  7km:
+    - "Dratini [Shiny]"
+    - "Trapinch [Shiny]"
+    - "Swablu [Shiny]"
+    - "Bagon [Shiny]"
+    - "Gible [Shiny]"
+    - "Deino [Shiny]"
+Raids:
+  5*:
+    - "Rayquaza [Shiny]"
+Bonus: []

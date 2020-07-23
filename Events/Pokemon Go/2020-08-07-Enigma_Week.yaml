@@ -1,0 +1,33 @@
+Name: "Enigma Week"
+Type: "GENERAL_EVENTS"
+Start Time: "2020-08-07T13:00:00"
+End Time: "2020-08-14T13:00:00"
+Timezone: "America/Los_Angeles"
+Wild:
+  - "Clefairy [Shiny]"
+  - "Jigglypuff"
+  - "Staryu [Shiny]"
+  - "Lunatone [Shiny]"
+  - "Solrock [Shiny]"
+  - "Baltoy [Shiny]"
+  - "Bronzor [Shiny]"
+  - "Elgyem"
+Research: []
+Eggs: {}
+Raids:
+  1*:
+    - "Unknown {U}"
+    - "Unknown {L}"
+    - "Unknown {T}"
+    - "Unknown {R}"
+    - "Unknown {A}"
+  3*:
+    - "Claydol"
+    - "Bronzong"
+    - "Elgyem"
+  5*:
+    - "Deoxys {Normal}[Shiny]"
+    - "Deoxys {Defense}[Shiny]"
+    - "Deoxys {Speed}[Shiny]"
+    - "Deoxys {Attack}[Shiny]"
+Bonus: []
