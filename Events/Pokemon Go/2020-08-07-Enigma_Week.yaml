@@ -5,7 +5,7 @@ End Time: "2020-08-14T13:00:00"
 Timezone: "America/Los_Angeles"
 Wild:
   - "Clefairy [Shiny]"
-  - "Jigglypuff"
+  - "Jigglypuff [Shiny]"
   - "Staryu [Shiny]"
   - "Lunatone [Shiny]"
   - "Solrock [Shiny]"
@@ -27,7 +27,4 @@ Raids:
     - "Elgyem"
   5*:
     - "Deoxys {Normal}[Shiny]"
-    - "Deoxys {Defense}[Shiny]"
-    - "Deoxys {Speed}[Shiny]"
-    - "Deoxys {Attack}[Shiny]"
 Bonus: []
