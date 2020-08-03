@@ -38,17 +38,42 @@ class AdminCog(commands.Cog, name='Other Commands'):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.has_role('Admin')
     @commands.command(
-        name='Create',
-        description='Creates the events in the appropriate Calendars',
-        usage='(Create Pokemon Go|False) (Create Harry Potter: Wizards Unite|False) (Create Catan: Wizards Unite|False)'
+        name='Help',
+        description='The help command',
+        usage=''
     )
-    async def create_events(self, ctx, pokemon: bool = False, wizards: bool = False, catan: bool = False):
-        LOGGER.info('Create events request received')
-        calendar.main(pokemon, wizards, catan, True)
-        await ctx.message.add_reaction('\N{THUMBS UP SIGN}')
-        LOGGER.info('Create events request fulfilled')
+    async def help_command(self, ctx):
+        embed = Embed(title='Eventer Commands')
+        embed.set_thumbnail(url=self.bot.user.avatar_url)
+
+        cogs = [c for c in self.bot.cogs.keys()]
+        for cog in cogs:
+            cog_commands = self.bot.get_cog(cog).get_commands()
+            commands_list = []
+            for comm in cog_commands:
+                usage = f"{CONFIG['Prefix']}{comm.name} {comm.usage}".strip()
+                commands_list.append(f"**{comm.name}** - `{usage}`\n*{comm.description}*")
+
+            embed.add_field(name=cog, value='\n'.join(commands_list), inline=False)
+
+        embed.set_footer(
+            text=f"Requested by {ctx.message.author.name}",
+            icon_url=ctx.message.author.avatar_url
+        )
+        await ctx.send(embed=embed)
+        await ctx.message.delete()
+
+    @commands.command(
+        name='Links',
+        description='List the Calendar invite links',
+        usage=''
+    )
+    async def calendar_links(self, ctx):
+        await ctx.send(f"**{pokemon_go.GAME_TITLE}:** https://forms.gle/PFGsN4YyugzMFmWT7")
+        await ctx.send(f"**{wizards_unite.GAME_TITLE}:** https://forms.gle/wFTtK4pWhUJ5HBp36")
+        await ctx.send(f"**{catan_explorer.GAME_TITLE}:** https://forms.gle/9FTx2hdgKxmEgPDs6")
+        await ctx.message.delete()
 
     @commands.command(
         name='Current',
@@ -99,31 +124,17 @@ class AdminCog(commands.Cog, name='Other Commands'):
         await ctx.message.delete()
         LOGGER.info('Upcoming events request fulfilled')
 
+    @commands.has_role('Admin')
     @commands.command(
-        name='Help',
-        description='The help command',
-        usage=''
+        name='Create',
+        description='[Admin Only]Creates the events in the appropriate Calendars',
+        usage='(Create Pokemon Go|False) (Create Harry Potter: Wizards Unite|False) (Create Catan: Wizards Unite|False)'
     )
-    async def help_command(self, ctx):
-        embed = Embed(title='Eventer Commands')
-        embed.set_thumbnail(url=self.bot.user.avatar_url)
-
-        cogs = [c for c in self.bot.cogs.keys()]
-        for cog in cogs:
-            cog_commands = self.bot.get_cog(cog).get_commands()
-            commands_list = []
-            for comm in cog_commands:
-                usage = f"{CONFIG['Prefix']}{comm.name} {comm.usage}".strip()
-                commands_list.append(f"**{comm.name}** - `{usage}`\n*{comm.description}*")
-
-            embed.add_field(name=cog, value='\n'.join(commands_list), inline=False)
-
-        embed.set_footer(
-            text=f"Requested by {ctx.message.author.name}",
-            icon_url=ctx.message.author.avatar_url
-        )
-        await ctx.send(embed=embed)
-        await ctx.message.delete()
+    async def create_events(self, ctx, pokemon: bool = False, wizards: bool = False, catan: bool = False):
+        LOGGER.info('Create events request received')
+        calendar.main(pokemon, wizards, catan, True)
+        await ctx.message.add_reaction('\N{THUMBS UP SIGN}')
+        LOGGER.info('Create events request fulfilled')
 
 
 def setup(bot):

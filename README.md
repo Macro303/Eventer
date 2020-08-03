@@ -10,9 +10,9 @@ Adds events to a Google Calendar, by filling out a Google Form you will be invit
 *Also includes an option for basic integration with Discord*
 
 ## Sign Ups
- - [**Pokemon Go** form](https://forms.gle/wwjJ1EFRxuKgZBMHA)
- - [**Harry Potter: Wizards Unite** form](https://forms.gle/wwjJ1EFRxuKgZBMHA)
- - [**Catan: World Explorer** form](https://forms.gle/Qcc2tLpt3rSRXHuN8)
+ - [**Pokemon Go** form](https://forms.gle/PFGsN4YyugzMFmWT7)
+ - [**Harry Potter: Wizards Unite** form](https://forms.gle/wFTtK4pWhUJ5HBp36)
+ - [**Catan: World Explorer** form](https://forms.gle/9FTx2hdgKxmEgPDs6)
 
 ### Calendars
 *If you want the full calendar and not specific events*
