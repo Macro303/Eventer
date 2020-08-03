@@ -5,6 +5,7 @@ import discord
 from discord.ext import commands
 
 from Bot import CONFIG
+from Bot.keep_alive import keep_alive
 from Logger import init_logger
 
 LOGGER = logging.getLogger(__name__)
@@ -28,5 +29,6 @@ async def on_command_error(ctx, error):
 
 
 if __name__ == "__main__":
-    init_logger('Bot-Bot')
+    init_logger('Bot')
+    keep_alive()
     bot.run(CONFIG['Token'], bot=True, reconnect=True)

@@ -5,6 +5,7 @@
 [![Issues](https://img.shields.io/github/issues/Macro303/Eventer.svg?style=flat-square)](https://github.com/Macro303/Eventer/issues)
 [![Contributors](https://img.shields.io/github/contributors/Macro303/Eventer.svg?style=flat-square)](https://github.com/Macro303/Eventer/graphs/contributors)
 [![License](https://img.shields.io/github/license/Macro303/Eventer.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Uptime](https://img.shields.io/uptimerobot/status/m785676390-89c773f2f695aad69892406e.svg?style=flat-square)](https://uptimerobot.com/dashboard.php)
 
 Adds events to a Google Calendar, by filling out a Google Form you will be invited to all the Events of the type you select.  
 *Also includes an option for basic integration with Discord*
@@ -30,6 +31,7 @@ Adds events to a Google Calendar, by filling out a Google Form you will be invit
  - [google-auth-oauthlib: 0.4.1](https://pypi.org/project/google-auth-oauthlib/)
  - [pytz: 2020.1](https://pypi.org/project/pytz/)
  - [discord.py: 1.3.4](https://pypi.org/project/discord.py/)
+ - [flask: 1.1.2](https://pypi.org/project/flask/)
 
 ## Execution
 1. Create a project on [Google API Console](https://console.developers.google.com/apis/dashboard), adding both Google Sheets and Google Calendar APIs to the project.
