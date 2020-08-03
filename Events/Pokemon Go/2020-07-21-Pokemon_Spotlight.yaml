@@ -5,8 +5,8 @@ End Time: "2020-07-21T19:00:00"
 Timezone: null
 Wild:
     - "Oddish [Shiny]"
-Research: []
+Researches: []
 Eggs: {}
 Raids: {}
-Bonus:
+Bonuses:
     - "2x Catch Stardust"

@@ -1,0 +1,14 @@
+Name: "First Year at Hogwarts, Part One"
+Type: "BRILLIANT_EVENT"
+Start Time: "2020-08-11T11:00:00"
+End Time: "2020-08-18T11:00:00"
+Timezone: "America/Los_Angeles"
+Family: null
+Pages: []
+Foundables: []
+Event Foundables:
+  Encounter: []
+  Portkey: []
+  Event Task: []
+  Fortress: []
+Bonuses: []

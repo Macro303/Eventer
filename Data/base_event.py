@@ -2,7 +2,7 @@
 import logging
 from datetime import datetime
 from enum import Enum, auto
-from typing import Optional, Set
+from typing import Optional
 
 from pytz import timezone
 
@@ -38,22 +38,6 @@ class Event:
 
     def description(self) -> str:
         return ''
-
-    def __str__(self) -> str:
-        fields = []
-        for key, value in self.__dict__.items():
-            fields.append(f"{key}={value}")
-        return f"{type(self).__name__}({', '.join(fields)})"
-
-
-class Attendee:
-    def __init__(self, name: str, email: str, event_types: Set[EventType]):
-        self.name = name
-        self.email = email
-        self.event_types = event_types
-
-    def to_dict(self):
-        return {'displayName': self.name, 'email': self.email, 'optional': True}
 
     def __str__(self) -> str:
         fields = []

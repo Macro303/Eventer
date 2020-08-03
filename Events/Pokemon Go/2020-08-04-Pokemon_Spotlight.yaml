@@ -1,12 +1,12 @@
 Name: "Pokemon Spotlight Hour"
 Type: "POKEMON_SPOTLIGHT_HOUR"
-Start Time: "2020-07-28T18:00:00"
-End Time: "2020-07-28T19:00:00"
+Start Time: "2020-08-04T18:00:00"
+End Time: "2020-08-04T19:00:00"
 Timezone: null
 Wild:
-    - "Buizel [Shiny]"
+    - "Horsea [Shiny]"
 Researches: []
 Eggs: {}
 Raids: {}
 Bonuses:
-    - "2x Catch XP"
+    - "2x Catch Candy"

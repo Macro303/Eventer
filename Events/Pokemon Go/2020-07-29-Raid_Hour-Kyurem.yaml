@@ -4,9 +4,9 @@ Start Time: "2020-07-29T18:00:00"
 End Time: "2020-07-29T19:00:00"
 Timezone: null
 Wild: []
-Research: []
+Researches: []
 Eggs: {}
 Raids:
     5*:
         - "Kyurem"
-Bonus: []
+Bonuses: []

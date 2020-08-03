@@ -5,9 +5,9 @@ End Time: "2020-07-19T17:00:00"
 Timezone: null
 Wild:
     - "Ghastly [Shiny]"
-Research: []
+Researches: []
 Eggs: {}
 Raids: {}
-Bonus:
+Bonuses:
     - "1/4 Hatch Distance"
     - "3hr Incense"
