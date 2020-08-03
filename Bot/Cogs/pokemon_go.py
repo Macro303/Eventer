@@ -20,9 +20,9 @@ def event_embed(item: Event, author_name: str, author_icon_url: str) -> Embed:
     )
 
     folder_name = clean_filename(GAME_TITLE).replace(' ', '%20')
-    embed.set_thumbnail(url=f"https://raw.githubusercontent.com/Macro303/Eventer/main/Events/{folder_name}/logo.jpg")
+    embed.set_author(name=GAME_TITLE,
+                     icon_url=f"https://raw.githubusercontent.com/Macro303/Eventer/main/Events/{folder_name}/logo.jpg")
 
-    embed.add_field(name="Game", value=GAME_TITLE)
     embed.add_field(name="Type", value=item.event_type.name)
     embed.add_field(name="Start Date", value=item.start_time_str)
     embed.add_field(name="End Date", value=item.end_time_str)
@@ -66,7 +66,7 @@ class PokemonCog(commands.Cog, name=f"{GAME_TITLE} Eventer"):
             author_icon_url=ctx.author.avatar_url
         ))
         await ctx.message.delete()
-        LOGGER.info(f"Creating {GAME_TITLE} event request accepted")
+        LOGGER.info(f"Creating {GAME_TITLE} event request fulfilled")
 
     @commands.command(
         name='Pokemon-Error',
@@ -76,7 +76,7 @@ class PokemonCog(commands.Cog, name=f"{GAME_TITLE} Eventer"):
     async def event_error(self, ctx, name: str, description: str):
         LOGGER.info(f"{GAME_TITLE} error request received")
         await ctx.message.add_reaction('\N{THUMBS UP SIGN}')
-        LOGGER.info(f"{GAME_TITLE} error request accepted")
+        LOGGER.info(f"{GAME_TITLE} error request fulfilled")
 
     @commands.command(
         name='Pokemon-Types',
@@ -89,7 +89,7 @@ class PokemonCog(commands.Cog, name=f"{GAME_TITLE} Eventer"):
 
         await ctx.send(f"**{GAME_TITLE}** Event Types:```\n{event_str}```")
         await ctx.message.delete()
-        LOGGER.info(f"{GAME_TITLE} type list request accepted")
+        LOGGER.info(f"{GAME_TITLE} type list request fulfilled")
 
     @commands.command(
         name='Pokemon-Leave',
@@ -102,7 +102,7 @@ class PokemonCog(commands.Cog, name=f"{GAME_TITLE} Eventer"):
         Calendar.CONFIG[GAME_TITLE]['Ignored'] = list({member.name, *Calendar.CONFIG[GAME_TITLE]['Ignored']})
         Calendar.save_config()
         await ctx.message.add_reaction('\N{THUMBS UP SIGN}')
-        LOGGER.info(f"{GAME_TITLE} ignore request accepted")
+        LOGGER.info(f"{GAME_TITLE} ignore request fulfilled")
 
 
 def setup(bot):

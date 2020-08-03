@@ -22,9 +22,9 @@ def event_embed(item: Event, author_name: str, author_icon_url: str, game_name: 
     )
 
     folder_name = clean_filename(game_name).replace(' ', '%20')
-    embed.set_thumbnail(url=f"https://raw.githubusercontent.com/Macro303/Eventer/main/Events/{folder_name}/logo.jpg")
+    embed.set_author(name=game_name,
+                     icon_url=f"https://raw.githubusercontent.com/Macro303/Eventer/main/Events/{folder_name}/logo.jpg")
 
-    embed.add_field(name="Game", value=game_name)
     embed.add_field(name="Type", value=item.event_type.name)
     embed.add_field(name="Start Date", value=item.start_time_str)
     embed.add_field(name="End Date", value=item.end_time_str)
@@ -72,7 +72,8 @@ class AdminCog(commands.Cog, name='Other Commands'):
                     ))
             if count == 0:
                 await ctx.send(f"No **{game.GAME_TITLE}** events currently active")
-        LOGGER.info('Current events request accepted')
+        await ctx.message.delete()
+        LOGGER.info('Current events request fulfilled')
 
     @commands.command(
         name='Upcoming',
@@ -95,7 +96,8 @@ class AdminCog(commands.Cog, name='Other Commands'):
                     ))
             if count == 0:
                 await ctx.send(f"No **{game.GAME_TITLE}** events upcoming")
-        LOGGER.info('Upcoming events request accepted')
+        await ctx.message.delete()
+        LOGGER.info('Upcoming events request fulfilled')
 
     @commands.command(
         name='Help',
