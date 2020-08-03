@@ -21,9 +21,8 @@ def event_embed(item: Event, author_name: str, author_icon_url: str, game_name: 
         description=f"```{description}```" if description else None
     )
 
-    embed.set_thumbnail(
-        url=f"https://raw.githubusercontent.com/Macro303/Eventer/main/Events/{clean_filename(game_name)}/logo.jpg"
-    )
+    folder_name = clean_filename(game_name).replace(' ', '%20')
+    embed.set_thumbnail(url=f"https://raw.githubusercontent.com/Macro303/Eventer/main/Events/{folder_name}/logo.jpg")
 
     embed.add_field(name="Game", value=game_name)
     embed.add_field(name="Type", value=item.event_type.name)

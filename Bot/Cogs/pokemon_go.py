@@ -15,13 +15,12 @@ def event_embed(item: Event, author_name: str, author_icon_url: str) -> Embed:
     description = item.description() \
         .replace("<b>", "**").replace("</b>", "**").replace("<u>", "__").replace("</u>", "__")
     embed = Embed(
-        title=item.name,
+        title=item.name + " Created",
         description=f"```{description}```" if description else None
     )
 
-    embed.set_thumbnail(
-        url=f"https://raw.githubusercontent.com/Macro303/Eventer/main/Events/{clean_filename(GAME_TITLE)}/logo.jpg"
-    )
+    folder_name = clean_filename(GAME_TITLE).replace(' ', '%20')
+    embed.set_thumbnail(url=f"https://raw.githubusercontent.com/Macro303/Eventer/main/Events/{folder_name}/logo.jpg")
 
     embed.add_field(name="Game", value=GAME_TITLE)
     embed.add_field(name="Type", value=item.event_type.name)
