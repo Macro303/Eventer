@@ -8,7 +8,7 @@ from Bot import CONFIG
 from Logger import init_logger
 
 LOGGER = logging.getLogger(__name__)
-COGS = ['Bot.Cogs.pokemon_go', 'Bot.Cogs.wizards_unite', 'Bot.Cogs.catan_explorer', 'Bot.Cogs.admin']
+COGS = ['Bot.cogs.pokemon_go', 'Bot.cogs.wizards_unite', 'Bot.cogs.catan_explorer', 'Bot.cogs.admin']
 bot = commands.Bot(command_prefix=commands.when_mentioned_or(CONFIG['Prefix']), case_insensitive=True)
 
 
