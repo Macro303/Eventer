@@ -31,14 +31,14 @@ class EventType(Enum):
 
 class Event(BaseEvent):
     def __init__(self, name: str, event_type: EventType, start_time: str, end_time: str,
-                 time_zone: Optional[str] = None, details: Optional[List[str]] = None):
-        super().__init__(name, event_type, start_time, end_time, time_zone)
-        self.details = details or []
+                 time_zone: Optional[str] = None, all_day: bool = False, bonuses: Optional[List[str]] = None):
+        super().__init__(name, event_type, start_time, end_time, time_zone, all_day)
+        self.bonuses = bonuses or []
 
     def description(self) -> str:
         fields = []
-        if self.details:
-            fields.append('\n  - '.join(['<b><u>Details:</u></b>', *self.details]))
+        if self.bonuses:
+            fields.append('\n  - '.join(['<b><u>Bonuses:</u></b>', *self.bonuses]))
         return '\n'.join(fields).strip()
 
     def __str__(self) -> str:
@@ -53,12 +53,13 @@ class Event(BaseEvent):
         event_file.touch()
         with open(event_file, 'w', encoding='UTF-8') as yaml_file:
             yaml.safe_dump({
-                "Name": self.name,
-                "Type": self.event_type.name,
-                "Start Time": self.start_time(),
-                "End Time": self.end_time(),
-                "Timezone": self.time_zone,
-                "Details": self.details or []
+                'Name': self.name,
+                'Type': self.event_type.name,
+                'Start Time': self.start_time_str,
+                'End Time': self.end_time_str,
+                'Timezone': self.time_zone,
+                'All Day': self.all_day,
+                'Bonuses': self.bonuses or []
             }, yaml_file)
 
 
@@ -74,12 +75,13 @@ def load_events() -> Set[Event]:
                 event_type=EventType[yaml_event['Type']],
                 start_time=yaml_event['Start Time'],
                 end_time=yaml_event['End Time'],
-                time_zone=yaml_event['Timezone']
+                time_zone=yaml_event['Timezone'],
+                all_day=yaml_event['All Day'] if 'All Day' in yaml_event else False,
+                bonuses=yaml_event['Bonuses']
             )
             days_dif = (datetime.today() - event.end_time()).days
             if days_dif > 14:
-                LOGGER.warning(f"Skipping Old Event `{event.start_time().strftime('%Y-%m-%d')}|"
-                               f"{event.name}` => {days_dif} days old")
+                LOGGER.warning(f"Skipping Old Event `{event.start_date_str()}|{event.name}` => {days_dif} days old")
                 continue
             if (event.end_time() - event.start_time()).days > 8:
                 temp = copy.deepcopy(event)

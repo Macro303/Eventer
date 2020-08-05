@@ -24,8 +24,12 @@ def event_embed(item: Event, author_name: str, author_icon_url: str) -> Embed:
                      icon_url=f"https://raw.githubusercontent.com/Macro303/Eventer/main/Events/{folder_name}/logo.jpg")
 
     embed.add_field(name="Type", value=item.event_type.name)
-    embed.add_field(name="Start Date", value=item.start_time_str)
-    embed.add_field(name="End Date", value=item.end_time_str)
+    if item.all_day:
+        embed.add_field(name="Start Date", value=item.start_date_str())
+        embed.add_field(name="End Date", value=item.end_date_str())
+    else:
+        embed.add_field(name="Start Date", value=item.start_time_str)
+        embed.add_field(name="End Date", value=item.end_time_str)
     embed.add_field(name="Timezone", value=item.time_zone)
 
     embed.set_footer(text=f"Requested by {author_name}", icon_url=author_icon_url)
@@ -39,10 +43,10 @@ class CatanCog(commands.Cog, name=f"{GAME_TITLE} Eventer"):
     @commands.command(
         name='Catan-Create',
         description='Creates Events',
-        usage='[Name] [Type] [Start Time] [End Time] [Details _Split by ","_] (Uses Local Time|False)'
+        usage='[Name] [Type] [Start Time] [End Time] [Bonuses _Split by ","_] (Uses Local Time|False) (All Day Event|False)'
     )
     async def create_event(self, ctx, name: str, type_str: str, start_time: str, end_time: str, details: str,
-                           local_time: bool = False):
+                           local_time: bool = False, all_day: bool = False):
         LOGGER.info(f"Creating {GAME_TITLE} event request received")
 
         event = Event(
@@ -51,7 +55,8 @@ class CatanCog(commands.Cog, name=f"{GAME_TITLE} Eventer"):
             start_time=start_time,
             end_time=end_time,
             time_zone=None if local_time else 'America/Los_Angeles',
-            details=list(filter(None, [x.strip() for x in details.split(",")]))
+            all_day=all_day,
+            bonuses=list(filter(None, [x.strip() for x in details.split(",")]))
         )
         event.save()
 

@@ -37,7 +37,7 @@ def main(run_pokemon: bool = False, run_wizards: bool = False, run_catan: bool =
     if run_catan:
         games.add(catan_explorer)
 
-    LOGGER.info(f"Creating Events for: {games}")
+    LOGGER.info(f"Creating Events for: {[x.__name__ for x in games]}")
 
     attendees = {}
     all_events = {}
@@ -63,8 +63,9 @@ def main(run_pokemon: bool = False, run_wizards: bool = False, run_catan: bool =
 
         for file_event in file_events:
             filtered_attendees = set([x for x in attendees[game_title] if file_event.event_type in x.event_types])
-            filtered = filter(lambda x: x['summary'] == file_event.name and
-                                        x['start']['dateTime'] == file_event.start_time_localized(), calendar_events)
+            filtered = filter(lambda x: x['summary'] == file_event.name and (
+                x['start']['dateTime'] == file_event.start_time_localized() if 'dateTime' in x['start'] else
+                x['start']['date'] == file_event.start_date_str()), calendar_events)
             exists = next(filtered, None)
             if exists:
                 update_event(service=service, file_event=file_event, calendar_event=exists,
@@ -92,7 +93,7 @@ def update_event(service, file_event: Event, calendar_event, attendees: Set[Atte
     if update_required:
         if not testing:
             service.events().patch(calendarId=calendar_id, eventId=calendar_event['id'], body=calendar_event).execute()
-        LOGGER.info(f"{file_event.start_time().strftime('%Y-%m-%d')}|{file_event.name} Event updated")
+        LOGGER.info(f"{file_event.start_date_str()}|{file_event.name} Event updated")
 
 
 def create_event(service, file_event: Event, attendees: Set[Attendee], calendar_id: str, testing: bool = True):
@@ -100,30 +101,35 @@ def create_event(service, file_event: Event, attendees: Set[Attendee], calendar_
         'summary': file_event.name,
         'description': file_event.description(),
         'start': {
-            'dateTime': file_event.start_time_str,
             'timeZone': file_event.time_zone
         },
         'end': {
-            'dateTime': file_event.end_time_str,
             'timeZone': file_event.time_zone
         },
         'attendees': [x.to_dict() for x in attendees],
         'reminders': {
             'useDefault': False,
-            'overrides': [
-                {'method': 'popup', 'minutes': 2 * 60},
-                {'method': 'popup', 'minutes': 24 * 60}
-            ]
+            'overrides': []
         },
         'guestsCanSeeOtherGuests': False,
         'guestsCanModify': False,
         'transparency': 'transparent'
     }
+    if file_event.all_day:
+        event_json['start']['date'] = file_event.start_date_str()
+        event_json['end']['date'] = file_event.end_date_str()
+        event_json['reminders']['overrides'].append({'method': 'popup', 'minutes': 3 * 60})
+        event_json['reminders']['overrides'].append({'method': 'popup', 'minutes': 15 * 60})
+    else:
+        event_json['start']['dateTime'] = file_event.start_time_str
+        event_json['end']['dateTime'] = file_event.end_time_str
+        event_json['reminders']['overrides'].append({'method': 'popup', 'minutes': 2 * 60})
+        event_json['reminders']['overrides'].append({'method': 'popup', 'minutes': 24 * 60})
 
     try:
         if not testing:
             calendar_event = service.events().insert(calendarId=calendar_id, body=event_json).execute()
-        LOGGER.info(f"{file_event.start_time().strftime('%Y-%m-%d')}|{file_event.name} created")
+        LOGGER.info(f"{file_event.start_date_str()}|{file_event.name} created")
     except errors.HttpError as err:
         LOGGER.error(err)
 

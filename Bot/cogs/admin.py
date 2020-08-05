@@ -26,8 +26,12 @@ def event_embed(item: Event, author_name: str, author_icon_url: str, game_name: 
                      icon_url=f"https://raw.githubusercontent.com/Macro303/Eventer/main/Events/{folder_name}/logo.jpg")
 
     embed.add_field(name="Type", value=item.event_type.name)
-    embed.add_field(name="Start Date", value=item.start_time_str)
-    embed.add_field(name="End Date", value=item.end_time_str)
+    if item.all_day:
+        embed.add_field(name="Start Date", value=item.start_date_str())
+        embed.add_field(name="End Date", value=item.end_date_str())
+    else:
+        embed.add_field(name="Start Date", value=item.start_time_str)
+        embed.add_field(name="End Date", value=item.end_time_str)
     embed.add_field(name="Timezone", value=item.time_zone)
 
     embed.set_footer(text=f"Requested by {author_name}", icon_url=author_icon_url)
@@ -132,7 +136,7 @@ class AdminCog(commands.Cog, name='Other Commands'):
     )
     async def create_events(self, ctx, pokemon: bool = False, wizards: bool = False, catan: bool = False):
         LOGGER.info('Create events request received')
-        calendar.main(pokemon, wizards, catan, True)
+        calendar.main(pokemon, wizards, catan, False)
         await ctx.message.add_reaction('\N{THUMBS UP SIGN}')
         LOGGER.info('Create events request fulfilled')
 
