@@ -4,10 +4,10 @@
 [![Version](https://img.shields.io/github/tag-pre/Macro303/Eventer.svg?label=version&style=flat-square)](https://github.com/Macro303/Eventer/releases)
 [![Issues](https://img.shields.io/github/issues/Macro303/Eventer.svg?style=flat-square)](https://github.com/Macro303/Eventer/issues)
 [![Contributors](https://img.shields.io/github/contributors/Macro303/Eventer.svg?style=flat-square)](https://github.com/Macro303/Eventer/graphs/contributors)
+[![Visits](https://badges.pufler.dev/visits/Macro303/Eventer?style=flat-square)](https://badges.pufler.dev)
 [![License](https://img.shields.io/github/license/Macro303/Eventer.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-Adds events to a Google Calendar, by filling out a Google Form you will be invited to all the Events of the type you select.  
-*Also includes an option for basic integration with Discord*
+Adds events to a Google Calendar, by filling out a Google Form you will be invited to all the Events of the type you select.
 
 ## Sign Ups
  - [**Pokemon Go** form](https://forms.gle/PFGsN4YyugzMFmWT7)
@@ -22,29 +22,28 @@ Adds events to a Google Calendar, by filling out a Google Form you will be invit
 
 ## Built Using
  - [Python: 3.8.5](https://www.python.org/)
- - [pip: 20.1.1](https://pypi.org/project/pip/)
- - [PyInstaller: 3.6](https://pypi.org/project/PyInstaller/)
+ - [pip: 20.2.2](https://pypi.org/project/pip/)
+ - [PyInstaller: 4.0](https://pypi.org/project/PyInstaller/)
  - [PyYAML: 5.3.1](https://pypi.org/project/PyYAML/)
  - [google-api-python-client: 1.10.0](https://pypi.org/project/google-api-python-client/)
  - [google-auth-httplib2: 0.0.4](https://pypi.org/project/google-auth-httplib2/)
  - [google-auth-oauthlib: 0.4.1](https://pypi.org/project/google-auth-oauthlib/)
  - [pytz: 2020.1](https://pypi.org/project/pytz/)
- - [discord.py: 1.3.4](https://pypi.org/project/discord.py/)
 
 ## Execution
 1. Create a project on [Google API Console](https://console.developers.google.com/apis/dashboard), adding both Google Sheets and Google Calendar APIs to the project.
 2. Create a **OAuth 2.0 Client ID** and download the `credentials.json` file.
 3. Run the following:
-    ```bash
-    $ pip install -r requirements.txt
-    $ python -m Calendar -t
-    ```
-4. Edit the created `calendar_config.yaml` as needed.
+   ```bash
+   $ pip install -r requirements.txt
+   $ python -m Calendar -t
+   ```
+4. Edit the created `config.yaml` as needed.
 5. Create `.yaml` files inside the appropriate `Events/{Game}` folder.
 6. Run the following:
-    ```bash
+   ```bash
    $ python -m Calendar -cwp
-    ```
+   ```
 
 ## Arguments
 *You can find all these by using the `-h` or `--help` argument*

@@ -25,7 +25,7 @@ def save_config():
         yaml.safe_dump(CONFIG, yaml_file)
 
 
-config_file = TOP_DIR.joinpath('calendar_config.yaml')
+config_file = TOP_DIR.joinpath('config.yaml')
 if config_file.exists():
     with open(config_file, 'r', encoding='UTF-8') as yaml_file:
         CONFIG = yaml.safe_load(yaml_file) or {
