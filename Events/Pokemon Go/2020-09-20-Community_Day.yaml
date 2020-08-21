@@ -3,8 +3,8 @@ Type: "COMMUNITY_DAY"
 Start Time: "2020-09-20T11:00:00"
 End Time: "2020-09-20T17:00:00"
 Timezone: null
-Wild: []
-Researches: []
-Eggs: {}
-Raids: {}
-Bonuses: []
+Wild: [ ]
+Researches: [ ]
+Eggs: { }
+Raids: { }
+Bonuses: [ ]

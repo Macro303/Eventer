@@ -3,9 +3,9 @@ Type: "GENERAL_EVENT"
 Start Time: "2020-08-21T08:00:00"
 End Time: "2020-08-26T22:00:00"
 Timezone: null
-Wild: []
+Wild: [ ]
 Researches:
-  - "Timed Research"
-Eggs: {}
-Raids: {}
-Bonuses: []
+  - "2x Deino [Shiny]"
+Eggs: { }
+Raids: { }
+Bonuses: [ ]

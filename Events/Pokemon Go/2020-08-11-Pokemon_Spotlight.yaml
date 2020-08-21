@@ -4,9 +4,9 @@ Start Time: "2020-08-11T18:00:00"
 End Time: "2020-08-11T19:00:00"
 Timezone: null
 Wild:
-    - "Sableye [Shiny]"
-Researches: []
-Eggs: {}
-Raids: {}
+  - "Sableye [Shiny]"
+Researches: [ ]
+Eggs: { }
+Raids: { }
 Bonuses:
-    - "2x Transfer Candy"
+  - "2x Transfer Candy"

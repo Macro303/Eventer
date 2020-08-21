@@ -4,9 +4,9 @@ Start Time: "2020-08-18T18:00:00"
 End Time: "2020-08-18T19:00:00"
 Timezone: null
 Wild:
-    - "Venipede"
-Researches: []
-Eggs: {}
-Raids: {}
+  - "Venipede"
+Researches: [ ]
+Eggs: { }
+Raids: { }
 Bonuses:
-    - "2x Evolution XP"
+  - "2x Evolution XP"

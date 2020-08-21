@@ -4,10 +4,10 @@ Start Time: "2020-08-08T11:00:00"
 End Time: "2020-08-08T17:00:00"
 Timezone: null
 Wild:
-    - "Magikarp [Shiny]"
-Researches: []
-Eggs: {}
-Raids: {}
+  - "Magikarp [Shiny]"
+Researches: [ ]
+Eggs: { }
+Raids: { }
 Bonuses:
-    - "3x Catch Stardust"
-    - "3hr Incense"
+  - "3x Catch Stardust"
+  - "3hr Incense"

@@ -3,9 +3,9 @@ Type: "RESEARCH_BREAKTHROUGH"
 Start Time: "2020-08-01T13:00:00"
 End Time: "2020-09-01T13:00:00"
 Timezone: "America/Los_Angeles"
-Wild: []
+Wild: [ ]
 Researches:
-    - "Scraggy"
-Eggs: {}
-Raids: {}
-Bonuses: []
+  - "Scraggy"
+Eggs: { }
+Raids: { }
+Bonuses: [ ]

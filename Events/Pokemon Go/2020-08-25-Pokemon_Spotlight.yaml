@@ -4,9 +4,9 @@ Start Time: "2020-08-25T18:00:00"
 End Time: "2020-08-25T19:00:00"
 Timezone: null
 Wild:
-    - "Geodude [Shiny]"
-Researches: []
-Eggs: {}
-Raids: {}
+  - "Geodude [Shiny]"
+Researches: [ ]
+Eggs: { }
+Raids: { }
 Bonuses:
-    - "2x Catch Stardust"
+  - "2x Catch Stardust"

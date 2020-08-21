@@ -5,14 +5,14 @@ End Time: "2020-08-24T23:00:00"
 Timezone: "America/Los_Angeles"
 Family: "Wonders of the Wizard World"
 Pages:
-    - "Room of Requirement IV"
-    - "Hogwarts Gate"
-    - "King's Cross Station"
+  - "Room of Requirement IV"
+  - "Hogwarts Gate"
+  - "King's Cross Station"
 Foundables:
-    - "Dirigible Plum"
-    - "Giant's Helm"
-    - "Puking Pastilles Display"
-    - "Weasley's Flying Car"
-    - "Whomping Willow"
-Event Foundables: {}
-Bonuses: []
+  - "Dirigible Plum"
+  - "Giant's Helm"
+  - "Puking Pastilles Display"
+  - "Weasley's Flying Car"
+  - "Whomping Willow"
+Event Foundables: { }
+Bonuses: [ ]

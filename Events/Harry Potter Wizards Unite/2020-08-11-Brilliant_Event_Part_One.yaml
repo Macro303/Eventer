@@ -4,8 +4,8 @@ Start Time: "2020-08-11T11:00:00"
 End Time: "2020-08-18T11:00:00"
 Timezone: "America/Los_Angeles"
 Family: null
-Pages: []
-Foundables: []
+Pages: [ ]
+Foundables: [ ]
 Event Foundables:
   Encounter:
     - "Brilliant Goblin"

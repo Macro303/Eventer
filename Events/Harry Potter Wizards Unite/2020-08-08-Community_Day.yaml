@@ -5,7 +5,7 @@ End Time: "2020-08-08T12:00:00"
 Timezone: null
 All Day: true
 Family: null
-Pages: []
-Foundables: []
-Event Foundables: {}
-Bonuses: {}
+Pages: [ ]
+Foundables: [ ]
+Event Foundables: { }
+Bonuses: { }

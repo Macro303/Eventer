@@ -3,10 +3,10 @@ Type: "RAID_BATTLE"
 Start Time: "2020-08-21T13:00:00"
 End Time: "2020-09-10T13:00:00"
 Timezone: "America/Los_Angeles"
-Wild: []
-Researches: []
-Eggs: {}
+Wild: [ ]
+Researches: [ ]
+Eggs: { }
 Raids:
   5*:
     - "Heatran [Shiny]"
-Bonuses: []
+Bonuses: [ ]

@@ -12,8 +12,8 @@ Wild:
   - "Baltoy [Shiny]"
   - "Bronzor [Shiny]"
   - "Elgyem"
-Researches: []
-Eggs: {}
+Researches: [ ]
+Eggs: { }
 Raids:
   1*:
     - "Unknown {U}"
@@ -27,4 +27,4 @@ Raids:
     - "Elgyem"
   5*:
     - "Deoxys {Normal}[Shiny]"
-Bonuses: []
+Bonuses: [ ]
