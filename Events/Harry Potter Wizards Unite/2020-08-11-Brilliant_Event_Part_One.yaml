@@ -7,8 +7,15 @@ Family: null
 Pages: []
 Foundables: []
 Event Foundables:
-  Encounter: []
-  Portkey: []
-  Event Task: []
-  Fortress: []
-Bonuses: []
+  Encounter:
+    - "Brilliant Goblin"
+    - "Brilliant Monster Book of Monsters"
+  Portkey:
+    - "First Year Shopping List [1.5km]"
+  Event Task:
+    - "Stack of Cauldrons"
+  Fortress:
+    - "Gringotts Facade"
+Bonuses:
+  - "Portkeys are 1.5km"
+  - "Spell Energy on the Map will give 5 Spell Energy"

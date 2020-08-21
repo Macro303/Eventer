@@ -3,12 +3,26 @@ Type: "BRILLIANT_EVENT"
 Start Time: "2020-08-25T11:00:00"
 End Time: "2020-09-1T11:00:00"
 Timezone: "America/Los_Angeles"
-Family: null
-Pages: []
-Foundables: []
+Family: "Hogwarts School"
+Pages:
+  - "DADA Classroom"
+  - "Moving Staircases"
+Foundables:
+  - "Ravenclaw Student"
+  - "Hufflepuff Student"
+  - "Slytherin Student"
+  - "Gryffindor Student"
+  - "Minerva McGonagall"
 Event Foundables:
-  Encounter: []
-  Portkey: []
-  Event Task: []
-  Fortress: []
-Bonuses: []
+  Encounter:
+    - "Pomona Sprout"
+    - "Professor Flitwick"
+  Portkey:
+    - "Professor Slughorn [1.5km]"
+  Event Task:
+    - "Professor Trelawney"
+  Fortress:
+    - "Nearly Headless Nick"
+Bonuses:
+  - "Portkeys are 1.5km"
+  - "Spell Energy on the Map will give 5 Spell Energy"
