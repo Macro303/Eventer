@@ -82,7 +82,7 @@ def update_event(service, file_event: Event, calendar_event, attendees: Set[Atte
                  testing: bool = True):
     update_required = False
     if file_event.description() != calendar_event.get('description', ''):
-        old = calendar_event['description']
+        old = calendar_event.get('description', '')
         calendar_event['description'] = file_event.description()
         LOGGER.debug(f"Updated from:\n`{old}`\n=>\n`{calendar_event['description']}`")
         update_required = True
