@@ -1,0 +1,12 @@
+Name: "August Wizarding Weekend"
+Type: "WIZARDING_WEEKEND"
+Start Time: "2020-09-04T11:00:00"
+End Time: "2020-09-07T11:00:00"
+Timezone: "America/Los_Angeles"
+Family: "Magizoology"
+Pages: [ ]
+Foundables:
+  - "Unicorn"
+  - "Newt Scamander"
+Event Foundables: { }
+Bonuses: [ ]
