@@ -1,0 +1,14 @@
+Name: "Go Battle Night"
+Type: "GO_BATTLE_LEAGUE"
+Start Time: "2020-09-24T18:00:00"
+End Time: "2020-09-24T23:59:00"
+Timezone: null
+Wild: [ ]
+Researches: [ ]
+Eggs: { }
+Raids: { }
+Bonuses:
+  - "x2 Stardust from Winning Battles"
+  - "x2 Stardust from Completing Sets"
+  - "x2 Stardust from Ranking Up"
+  - "Up to 20 Sets of GO Battle League Battles"

@@ -1,0 +1,12 @@
+Name: "Pokemon Spotlight Hour"
+Type: "POKEMON_SPOTLIGHT_HOUR"
+Start Time: "2020-09-08T18:00:00"
+End Time: "2020-09-08T19:00:00"
+Timezone: null
+Wild:
+  - "Houndour [Shiny]"
+Researches: [ ]
+Eggs: { }
+Raids: { }
+Bonuses:
+  - "2x Catch Candy"

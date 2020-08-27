@@ -1,0 +1,12 @@
+Name: "Raid Hour"
+Type: "RAID_HOUR"
+Start Time: "2020-09-30T18:00:00"
+End Time: "2020-09-30T19:00:00"
+Timezone: null
+Wild: [ ]
+Researches: [ ]
+Eggs: { }
+Raids:
+  5*:
+    - "Zapdos [Shiny]"
+Bonuses: [ ]

@@ -1,0 +1,12 @@
+Name: "Pokemon Spotlight Hour"
+Type: "POKEMON_SPOTLIGHT_HOUR"
+Start Time: "2020-09-22T18:00:00"
+End Time: "2020-09-22T19:00:00"
+Timezone: null
+Wild:
+  - "Spearow"
+Researches: [ ]
+Eggs: { }
+Raids: { }
+Bonuses:
+  - "2x Evolution XP"

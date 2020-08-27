@@ -1,0 +1,12 @@
+Name: "Pokemon Spotlight Hour"
+Type: "POKEMON_SPOTLIGHT_HOUR"
+Start Time: "2020-09-29T18:00:00"
+End Time: "2020-09-29T19:00:00"
+Timezone: null
+Wild:
+  - "Skitty [Shiny]"
+Researches: [ ]
+Eggs: { }
+Raids: { }
+Bonuses:
+  - "2x Catch Stardust"

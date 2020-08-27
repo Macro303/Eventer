@@ -1,0 +1,13 @@
+Name: "Investigate a Mysterious Energy"
+Type: "GENERAL_EVENT"
+Start Time: "2020-09-30T12:00:00"
+End Time: "2020-09-30T12:00:00"
+Timezone: null
+All Day: true
+Wild: [ ]
+Researches:
+  - "Victini"
+Eggs: { }
+Raids: {}
+Bonuses:
+  - "If you already have Victini from GO Fest 2020, you'll recieve Victini Candy instead"
