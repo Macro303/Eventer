@@ -23,9 +23,8 @@ Adds events to a Google Calendar, by filling out a Google Form you will be invit
 ## Built Using
  - [Python: 3.8.5](https://www.python.org/)
  - [pip: 20.2.2](https://pypi.org/project/pip/)
- - [PyInstaller: 4.0](https://pypi.org/project/PyInstaller/)
  - [PyYAML: 5.3.1](https://pypi.org/project/PyYAML/)
- - [google-api-python-client: 1.10.0](https://pypi.org/project/google-api-python-client/)
+ - [google-api-python-client: 1.11.0](https://pypi.org/project/google-api-python-client/)
  - [google-auth-httplib2: 0.0.4](https://pypi.org/project/google-auth-httplib2/)
  - [google-auth-oauthlib: 0.4.1](https://pypi.org/project/google-auth-oauthlib/)
  - [pytz: 2020.1](https://pypi.org/project/pytz/)
