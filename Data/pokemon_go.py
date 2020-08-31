@@ -120,7 +120,7 @@ def load_events() -> Set[Event]:
                 event_type=EventType[yaml_event['Type']],
                 start_time=yaml_event['Start Time'],
                 end_time=yaml_event['End Time'],
-                time_zone=yaml_event['Timezone'],
+                time_zone=yaml_event['Timezone'] if 'Timezone' in yaml_event else None,
                 all_day=yaml_event['All Day'] if 'All Day' in yaml_event else False,
                 wild=yaml_event['Wild'],
                 researches=yaml_event['Researches'],

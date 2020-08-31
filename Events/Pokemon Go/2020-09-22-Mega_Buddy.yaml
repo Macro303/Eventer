@@ -1,0 +1,24 @@
+Name: "Mega Buddy"
+Type: "GENERAL_EVENT"
+Start Time: "2020-09-22T08:00:00"
+End Time: "2020-09-28T22:00:00"
+Wild:
+  - "Doduo [Shiny]"
+  - "Exeggutor {Alolan} [Shiny]"
+  - "Pinsir [Shiny]"
+  - "Lapras [Shiny]"
+  - "Snorlax"
+  - "Furret"
+  - "Wobbuffet [Shiny]"
+  - "Mantine"
+  - "Skarmory [Shiny]"
+Researches:
+  - "Mega Energy for Venusaur"
+  - "Mega Energy for Charizard"
+  - "Mega Energy for Blastoise"
+  - "Halloween Timed Research for Mega Gengar"
+Eggs: {}
+Raids: {}
+Bonuses:
+  - "Mega Evolution lasts for 12hrs"
+  - "x2 Poffin Duration"

@@ -1,0 +1,31 @@
+Name: "Mega Raids"
+Type: "GENERAL_EVENT"
+Start Time: "2020-09-01T08:00:00"
+End Time: "2020-09-07T22:00:00"
+Wild:
+  - "Abra [Shiny]"
+  - "Magnemite [Shiny]"
+  - "Exeggcute [Shiny]"
+  - "Rhyhorn [Shiny]"
+  - "Tangela [Shiny]"
+  - "Electabuzz"
+  - "Omanyte [Shiny]"
+  - "Aerodactyl [Shiny]"
+  - "Murkrow [Shiny]"
+  - "Larvitar [Shiny]"
+  - "Treecko [Shiny]"
+  - "Torchic [Shiny]"
+  - "Lotad [Shiny]"
+  - "Roselia [Shiny]"
+  - "Beldum [Shiny]"
+  - "Cranidos"
+Researches:
+  - "Mega Energy for Venusaur"
+  - "Mega Energy for Charizard"
+  - "Mega Energy for Blastoise"
+Eggs: { }
+Raids: {}
+Bonuses:
+  - "Increased Mega Raids"
+  - "Increased Attack Bonus from friends in raids"
+  - "If 2Mil Mega Raids are won before the end, Mega Pidgeot will be unlocked"
