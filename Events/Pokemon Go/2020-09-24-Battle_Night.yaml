@@ -8,7 +8,5 @@ Researches: [ ]
 Eggs: { }
 Raids: { }
 Bonuses:
-  - "x2 Stardust from Winning Battles"
-  - "x2 Stardust from Completing Sets"
-  - "x2 Stardust from Ranking Up"
-  - "Up to 20 Sets of GO Battle League Battles"
+  - "x2 Stardust from Winning Battles, Completing Sets and Ranking Up"
+  - "Up to 20 Sets of Battles"

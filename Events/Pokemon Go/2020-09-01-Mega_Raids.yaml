@@ -19,12 +19,14 @@ Wild:
   - "Roselia [Shiny]"
   - "Beldum [Shiny]"
   - "Cranidos"
-Researches:
-  - "Mega Energy for Venusaur"
-  - "Mega Energy for Charizard"
-  - "Mega Energy for Blastoise"
-Eggs: { }
-Raids: {}
+Researches: []
+Eggs: {}
+Raids:
+  Mega:
+    - "Venusaur {Mega}"
+    - "Charizard {Mega X}"
+    - "Charizard {Mega Y}"
+    - "Blastoise {Mega}"
 Bonuses:
   - "Increased Mega Raids"
   - "Increased Attack Bonus from friends in raids"
