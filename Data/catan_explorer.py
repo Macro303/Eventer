@@ -77,7 +77,7 @@ def load_events() -> Set[Event]:
                 end_time=yaml_event['End Time'],
                 time_zone=yaml_event['Timezone'] if 'Timezone' in yaml_event else None,
                 all_day=yaml_event['All Day'] if 'All Day' in yaml_event else False,
-                bonuses=yaml_event['Bonuses']
+                bonuses=yaml_event['Bonuses'] if 'Bonuses' in yaml_event else None
             )
             days_dif = (datetime.today() - event.end_time()).days
             if days_dif > 14:

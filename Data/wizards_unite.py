@@ -107,11 +107,11 @@ def load_events() -> Set[Event]:
                 end_time=yaml_event['End Time'],
                 time_zone=yaml_event['Timezone'] if 'Timezone' in yaml_event else None,
                 all_day=yaml_event['All Day'] if 'All Day' in yaml_event else False,
-                family=yaml_event['Family'],
-                pages=yaml_event['Pages'],
-                foundables=yaml_event['Foundables'],
-                event_foundables=yaml_event['Event Foundables'],
-                bonuses=yaml_event['Bonuses']
+                family=yaml_event['Family'] if 'Family' in yaml_event else None,
+                pages=yaml_event['Pages'] if 'Pages' in yaml_event else None,
+                foundables=yaml_event['Foundables'] if 'Foundables' in yaml_event else None,
+                event_foundables=yaml_event['Event Foundables'] if 'Event Foundables' in yaml_event else None,
+                bonuses=yaml_event['Bonuses'] if 'Bonuses' in yaml_event else None
             )
             days_dif = (datetime.today() - event.end_time()).days
             if days_dif > 14:
