@@ -8,14 +8,14 @@ Pages: [ ]
 Foundables: [ ]
 Event Foundables:
   Encounter:
-    - "Classified"
-    - "Classified"
+    - "Brilliant Harry Potter"
+    - "Brilliant Prophecy Orb"
   Portkey:
-    - "Classified [1.5km]"
+    - "Ginny Weasley [1.5km]"
   Event Task:
-    - "Classified"
+    - "Hermione Granger"
   Fortress:
-    - "Classified"
+    - "Death Eater"
 Bonuses:
   - "Portkeys are 1.5km"
   - "Spell Energy on the Map will give 5 Spell Energy"

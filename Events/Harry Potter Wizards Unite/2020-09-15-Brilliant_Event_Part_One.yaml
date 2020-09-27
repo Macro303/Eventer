@@ -8,14 +8,14 @@ Pages: [ ]
 Foundables: [ ]
 Event Foundables:
   Encounter:
-    - "Classified"
-    - "Classified"
+    - "Brilliant Veil"
+    - "Brilliant Tank of Brains"
   Portkey:
-    - "Classified [1.5km]"
+    - "Ron Weasley [1.5km]"
   Event Task:
-    - "Classified"
+    - "Luna Lovegood"
   Fortress:
-    - "Classified"
+    - "Bell Jar of Time"
 Bonuses:
   - "Portkeys are 1.5km"
   - "Spell Energy on the Map will give 5 Spell Energy"
