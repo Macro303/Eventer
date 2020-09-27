@@ -1,0 +1,12 @@
+Name: "October Research Breakthrough"
+Type: "RESEARCH_BREAKTHROUGH"
+Start Time: "2020-10-01T13:00:00"
+End Time: "2020-11-01T13:00:00"
+Timezone: "America/Los_Angeles"
+Wild: []
+Researches:
+  - "Shedinja"
+Eggs: {}
+Raids: {}
+Snapshots: []
+Bonuses: []

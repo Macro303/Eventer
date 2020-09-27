@@ -3,10 +3,11 @@ Type: "GO_BATTLE_LEAGUE"
 Start Time: "2020-10-26T13:00:00"
 End Time: "2020-11-03T13:00:00"
 Timezone: "America/Los_Angeles"
-Wild: [ ]
-Researches: [ ]
-Eggs: { }
-Raids: { }
+Wild: []
+Researches: []
+Eggs: {}
+Raids: {}
+Snapshots: []
 Bonuses:
   - "Only Poison-, Ghost-, Bug-, Dark- and Fairy-type Allowed"
   - "1500cp Limit"

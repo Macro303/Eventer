@@ -54,12 +54,14 @@ class Event(BaseEvent):
     def __init__(self, name: str, event_type: EventType, start_time: str, end_time: str,
                  time_zone: Optional[str] = None, all_day: bool = False, wild: Optional[List[str]] = None,
                  researches: Optional[List[str]] = None, eggs: Optional[Dict[str, List[str]]] = None,
-                 raids: Optional[Dict[str, List[str]]] = None, bonuses: Optional[List[str]] = None):
+                 raids: Optional[Dict[str, List[str]]] = None, snapshots: Optional[List[str]] = None,
+                 bonuses: Optional[List[str]] = None):
         super().__init__(name, event_type, start_time, end_time, time_zone, all_day)
         self.wild = wild or []
         self.researches = researches or []
         self.eggs = eggs or {}
         self.raids = raids or {}
+        self.snapshots = snapshots or []
         self.bonuses = bonuses or []
 
     def description(self) -> str:
@@ -78,6 +80,8 @@ class Event(BaseEvent):
             for key, values in self.raids.items():
                 output.append('\n    - '.join([f"  <b>{key}:</b>", *values]))
             fields.append('\n'.join(output))
+        if self.snapshots:
+            fields.append('\n  - '.join(['<b><u>Snapshots:</u></b>', *self.snapshots]))
         if self.bonuses:
             fields.append('\n  - '.join(['<b><u>Bonuses:</u></b>', *self.bonuses]))
         return '\n'.join(fields).strip()
@@ -104,6 +108,7 @@ class Event(BaseEvent):
                 'Researches': self.researches or [],
                 'Eggs': self.eggs or {},
                 'Raids': self.raids or {},
+                'Snapshots': self.snapshots or [],
                 'Bonuses': self.bonuses or []
             }, yaml_file)
 
@@ -126,6 +131,7 @@ def load_events() -> Set[Event]:
                 researches=yaml_event['Researches'],
                 eggs=yaml_event['Eggs'],
                 raids=yaml_event['Raids'],
+                snapshots=yaml_event['Snapshots'] if 'Snapshots' in yaml_event else None,
                 bonuses=yaml_event['Bonuses']
             )
             days_dif = (datetime.today() - event.end_time()).days
