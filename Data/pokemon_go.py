@@ -127,12 +127,12 @@ def load_events() -> Set[Event]:
                 end_time=yaml_event['End Time'],
                 time_zone=yaml_event['Timezone'] if 'Timezone' in yaml_event else None,
                 all_day=yaml_event['All Day'] if 'All Day' in yaml_event else False,
-                wild=yaml_event['Wild'],
-                researches=yaml_event['Researches'],
-                eggs=yaml_event['Eggs'],
-                raids=yaml_event['Raids'],
+                wild=yaml_event['Wild'] if 'Wild' in yaml_event else None,
+                researches=yaml_event['Researches'] if 'Researches' in yaml_event else None,
+                eggs=yaml_event['Eggs'] if 'Eggs' in yaml_event else None,
+                raids=yaml_event['Raids'] if 'Raids' in yaml_event else None,
                 snapshots=yaml_event['Snapshots'] if 'Snapshots' in yaml_event else None,
-                bonuses=yaml_event['Bonuses']
+                bonuses=yaml_event['Bonuses'] if 'Bonuses' in yaml_event else None
             )
             days_dif = (datetime.today() - event.end_time()).days
             if days_dif > 14:
