@@ -137,4 +137,7 @@ def create_event(service, file_event: Event, attendees: Set[Attendee], calendar_
 if __name__ == '__main__':
     init_logger('Calendar')
     args = get_arguments()
-    main(args.pokemon, args.wizards, args.catan, args.test)
+    try:
+        main(args.pokemon, args.wizards, args.catan, args.test)
+    except:
+        LOGGER.fatal('Unable to connect to Google')
