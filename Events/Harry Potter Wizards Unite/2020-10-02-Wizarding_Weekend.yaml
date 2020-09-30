@@ -1,0 +1,12 @@
+Name: "October Wizarding Weekend"
+Type: "WIZARDING_WEEKEND"
+Start Time: "2020-10-02T11:00:00"
+End Time: "2020-10-05T11:00:00"
+Timezone: "America/Los_Angeles"
+Family: "Dark Arts"
+Foundables:
+ - "Magick Moste Evile"
+ - "Thestral"
+ - "Portrait of Voldemort"
+ - "Percival Graves"
+ - "Tom Riddle"

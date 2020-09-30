@@ -1,0 +1,14 @@
+Name: "October Community Day"
+Type: "COMMUNITY_DAY"
+Start Time: "2020-10-18T01:00:00"
+End Time: "2020-10-18T23:00:00"
+All Day: true
+Family: "Wonders of the Wizarding World"
+Pages:
+  - "Weazley's Wizarding Wheezes"
+Foundables:
+ - "Lee Jordan"
+ - "Proprietor Fred Weasley"
+ - "Proprietor George Weasley"
+ - "Puking Pastilles Display"
+ - "Skiving Snackbox"

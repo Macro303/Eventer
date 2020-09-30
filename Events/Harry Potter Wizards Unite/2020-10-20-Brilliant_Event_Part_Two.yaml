@@ -1,0 +1,13 @@
+Name: "Darkness Rising, Part Two"
+Type: "BRILLIANT_EVENT"
+Start Time: "2020-10-20T11:00:00"
+End Time: "2020-10-27T11:00:00"
+Timezone: "America/Los_Angeles"
+Event Foundables:
+  Encounter: []
+  Portkey: []
+  Event Task: []
+  Fortress: []
+Bonuses:
+  - "Portkeys are 1.5km"
+  - "Spell Energy on the Map will give 5 Spell Energy"
