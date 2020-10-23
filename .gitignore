@@ -15,6 +15,4 @@ logs/
 
 # =====Project=====
 token.pickle
-!Events/*/*
-pyproject.toml
-.replit
+!data/*/*

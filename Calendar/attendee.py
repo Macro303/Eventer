@@ -2,7 +2,7 @@
 import logging
 from typing import Set
 
-from Data.base_event import EventType
+from Calendar.Events.base_event import EventType
 
 LOGGER = logging.getLogger(__name__)
 

@@ -8,8 +8,8 @@ from googleapiclient.discovery import build
 
 from Calendar import get_creds, CONFIG, list_events, load_attendees
 from Calendar.attendee import Attendee
-from Data import pokemon_go, wizards_unite, catan_explorer
-from Data.base_event import Event
+from Calendar.Events import pokemon_go, wizards_unite, catan_explorer
+from Calendar.Events.base_event import Event
 from Logger import init_logger
 
 LOGGER = logging.getLogger(__name__)

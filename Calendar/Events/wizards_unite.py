@@ -7,8 +7,8 @@ from typing import Optional, List, Set, Dict
 
 import yaml
 
-from Data import EVENT_DIR, clean_filename
-from Data.base_event import Event as BaseEvent
+from Calendar.Events import EVENT_DIR, clean_filename
+from Calendar.Events.base_event import Event as BaseEvent
 
 LOGGER = logging.getLogger(__name__)
 GAME_TITLE = 'Harry Potter: Wizards Unite'
