@@ -1,7 +1,7 @@
 Name: "Raid Hour"
 Type: "RAID_HOUR"
-Start Time: "2020-10-28T18:00:00"
-End Time: "2020-10-28T19:00:00"
+Start Time: "2020-11-04T18:00:00"
+End Time: "2020-11-04T19:00:00"
 Raids:
   5*:
     - "Darkrai [Shiny]"

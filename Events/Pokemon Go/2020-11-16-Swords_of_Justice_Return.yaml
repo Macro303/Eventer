@@ -1,0 +1,10 @@
+Name: "Swords of Justice Returns"
+Type: "RAID_BATTLE"
+Start Time: "2020-11-16T13:00:00"
+End Time: "2020-11-24T13:00:00"
+Timezone: "America/Los_Angeles"
+Raids:
+  5*:
+    - "Cobalion [Shiny]"
+    - "Terrakion [Shiny]"
+    - "Virizion [Shiny]"

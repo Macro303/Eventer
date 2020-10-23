@@ -1,0 +1,8 @@
+Name: "Pokemon Spotlight Hour"
+Type: "POKEMON_SPOTLIGHT_HOUR"
+Start Time: "2020-11-24T18:00:00"
+End Time: "2020-11-24T19:00:00"
+Wild:
+  - "Barboach [Shiny]"
+Bonuses:
+  - "2x Transfer Candy"

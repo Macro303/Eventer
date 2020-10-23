@@ -16,11 +16,10 @@ Wild:
   - "Burmy {Plant}[Shiny]"
   - "Foongus"
   - "Deerling {Autumn}"
-  - "Sawsbuck {Autumn}"
 Researches: []
 Eggs:
   5km:
-    - ""
+    - "Autumn Themed"
 Raids: {}
 Bonuses:
   - "2x Berry Treat Effectiveness"

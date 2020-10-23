@@ -1,0 +1,15 @@
+Name: "Halloween Event 2020"
+Type: "GENERAL_EVENT"
+Start Time: "2020-10-23T18:00:00"
+End Time: "2020-11-03T18:00:00"
+Timezone: "America/Los_Angeles"
+Wild:
+  - "Ghost-Type"
+  - "Sableye {Costume}[Shiny]"
+  - "Yamask {Galarian}"
+Researches:
+  - "A Speeky Message Unmasked"
+  - "Spiritomb [Shiny]"
+Bonuses:
+  - "2x Transfer Candy"
+  - "2x Catch Candy"
