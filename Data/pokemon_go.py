@@ -51,17 +51,28 @@ class EventType(Enum):
 
 
 class Event(BaseEvent):
-    def __init__(self, name: str, event_type: EventType, start_time: str, end_time: str,
-                 time_zone: Optional[str] = None, all_day: bool = False, wild: Optional[List[str]] = None,
-                 researches: Optional[List[str]] = None, eggs: Optional[Dict[str, List[str]]] = None,
-                 raids: Optional[Dict[str, List[str]]] = None, snapshots: Optional[List[str]] = None,
-                 bonuses: Optional[List[str]] = None):
+    def __init__(
+        self,
+        name: str,
+        event_type: EventType,
+        start_time: str,
+        end_time: str,
+        time_zone: Optional[str] = None,
+        all_day: bool = False,
+        wild: Optional[List[str]] = None,
+        researches: Optional[List[str]] = None,
+        eggs: Optional[Dict[str, List[str]]] = None,
+        raids: Optional[Dict[str, List[str]]] = None,
+        snapshots: Optional[List[str]] = None,
+        shadows: Optional[List[str]] = None,
+        bonuses: Optional[List[str]] = None):
         super().__init__(name, event_type, start_time, end_time, time_zone, all_day)
         self.wild = wild or []
         self.researches = researches or []
         self.eggs = eggs or {}
         self.raids = raids or {}
         self.snapshots = snapshots or []
+        self.shadows = shadows or []
         self.bonuses = bonuses or []
 
     def description(self) -> str:
@@ -82,6 +93,8 @@ class Event(BaseEvent):
             fields.append('\n'.join(output))
         if self.snapshots:
             fields.append('\n  - '.join(['<b><u>Snapshots:</u></b>', *self.snapshots]))
+        if self.shadows:
+            fields.append('\n  - '.join(['<b><u>Shadows:</u></b>', *self.shadows]))
         if self.bonuses:
             fields.append('\n  - '.join(['<b><u>Bonuses:</u></b>', *self.bonuses]))
         return '\n'.join(fields).strip()
@@ -109,6 +122,7 @@ class Event(BaseEvent):
                 'Eggs': self.eggs or {},
                 'Raids': self.raids or {},
                 'Snapshots': self.snapshots or [],
+                'Shadows': self.shadows or [],
                 'Bonuses': self.bonuses or []
             }, yaml_file)
 
@@ -132,6 +146,7 @@ def load_events() -> Set[Event]:
                 eggs=yaml_event['Eggs'] if 'Eggs' in yaml_event else None,
                 raids=yaml_event['Raids'] if 'Raids' in yaml_event else None,
                 snapshots=yaml_event['Snapshots'] if 'Snapshots' in yaml_event else None,
+                shadows=yaml_event['Shadows'] if 'Shadows' in yaml_event else None,
                 bonuses=yaml_event['Bonuses'] if 'Bonuses' in yaml_event else None
             )
             days_dif = (datetime.today() - event.end_time()).days
