@@ -1,0 +1,18 @@
+Name: "Halloween Event"
+Type: "GENERAL_EVENT"
+Start Time: "2020-10-30T11:00:00"
+End Time: "2020-11-02T11:00:00"
+Timezone: "America/Los_Angeles"
+Event Foundables:
+  Encounter:
+    - "Werewolf"
+    - "Parvati Patil"
+    - "Sirius Black"
+    - "Nymphadora Tonks"
+    - "Young Harry Potter"
+    - "Young Remus Lupin"
+    - "Ministry Employee Newt"
+  Portkey:
+    - "Tom Riddle Sr. Gravestone [Obsidian]"
+    - "Half-Blood Prince's Copy of Advanced Potion Making [Silver]"
+    - "Wizengamot Accusation Chair [Golden]"
