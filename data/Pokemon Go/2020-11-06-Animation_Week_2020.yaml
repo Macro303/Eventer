@@ -1,0 +1,27 @@
+Name: "Animation Week 2020"
+Type: "GENERAL_EVENT"
+Start Time: "2020-11-06T08:00:00"
+End Time: "2020-11-12T22:00:00"
+Wild:
+  - "Bulbasaur [Shiny]"
+  - "Pikachu {Ash Cap}[Shiny]"
+  - "Exeggcute [Shiny]"
+  - "Cubone [Shiny]"
+  - "Scyther [Shiny]"
+  - "Dratini [Shiny]"
+  - "Cyndaquil [Shiny]"
+Eggs:
+  7km:
+    - "Cubone [Shiny]"
+    - "Pichu [Shiny]"
+    - "Riolu [Shiny]"
+    - "Mantyke"
+Raids:
+  1*:
+    - "Ivysaur"
+    - "Pinsir [Shiny]"
+  3*:
+    - "Snorlax"
+    - "Golurk"
+  5*:
+    - "Lugia [Shiny]"

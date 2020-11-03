@@ -2,3 +2,6 @@ Name: "Raid Hour"
 Type: "RAID_HOUR"
 Start Time: "2020-11-11T18:00:00"
 End Time: "2020-11-11T19:00:00"
+Raids:
+  5*:
+    - "Lugia [Shiny]"

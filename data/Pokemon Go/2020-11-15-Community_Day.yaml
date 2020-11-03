@@ -1,0 +1,13 @@
+Name: "November Community Day"
+Type: "COMMUNITY_DAY"
+Start Time: "2020-11-15T11:00:00"
+End Time: "2020-11-15T17:00:00"
+Wild:
+  - "Electabuzz [Shiny]"
+Eggs:
+  2km:
+    - "Elekid [Shiny]"
+Bonus:
+  - "Increased Spawns"
+  - "1/4 Egg Hatch Distance"
+  - "3hr Incense"
