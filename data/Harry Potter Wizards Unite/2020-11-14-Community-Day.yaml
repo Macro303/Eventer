@@ -1,0 +1,14 @@
+Name: "November Community Day"
+Type: "COMMUNITY_DAY"
+Start Time: "2020-11-14T01:00:00"
+End Time: "2020-11-14T23:00:00"
+All Day: true
+Family: "Legends of Hogwarts"
+Pages:
+  - "Chess Chamber"
+Foundables:
+ - "Albus Dumbledore"
+ - "Flying Kye"
+ - "Wizard Chess Queen"
+ - "Young Hermione Granger"
+ - "Young Ron Weasley"
