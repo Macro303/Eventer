@@ -26,8 +26,8 @@ Adds events to a Google Calendar, by filling out a Google Form you will be invit
  - [PyYAML: 5.3.1](https://pypi.org/project/PyYAML/)
  - [google-api-python-client: 1.12.5](https://pypi.org/project/google-api-python-client/)
  - [google-auth-httplib2: 0.0.4](https://pypi.org/project/google-auth-httplib2/)
- - [google-auth-oauthlib: 0.4.1](https://pypi.org/project/google-auth-oauthlib/)
- - [pytz: 2020.1](https://pypi.org/project/pytz/)
+ - [google-auth-oauthlib: 0.4.2](https://pypi.org/project/google-auth-oauthlib/)
+ - [pytz: 2020.4](https://pypi.org/project/pytz/)
 
 ## Execution
 1. Create a project on [Google API Console](https://console.developers.google.com/apis/dashboard), adding both Google Sheets and Google Calendar APIs to the project.
