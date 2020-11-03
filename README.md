@@ -1,10 +1,9 @@
-<img src="https://raw.githubusercontent.com/Macro303/Eventer/main/logo.png" align="left" width="150" height="150" alt="Eventer Logo">
+<img src="./logo.png" align="left" width="150" height="150" alt="Eventer Logo">
 
 # Eventer
 [![Version](https://img.shields.io/github/tag-pre/Macro303/Eventer.svg?label=version&style=flat-square)](https://github.com/Macro303/Eventer/releases)
 [![Issues](https://img.shields.io/github/issues/Macro303/Eventer.svg?style=flat-square)](https://github.com/Macro303/Eventer/issues)
 [![Contributors](https://img.shields.io/github/contributors/Macro303/Eventer.svg?style=flat-square)](https://github.com/Macro303/Eventer/graphs/contributors)
-[![Visits](https://badges.pufler.dev/visits/Macro303/Eventer?style=flat-square)](https://badges.pufler.dev)
 [![License](https://img.shields.io/github/license/Macro303/Eventer.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 Adds events to a Google Calendar, by filling out a Google Form you will be invited to all the Events of the type you select.
@@ -38,7 +37,7 @@ Adds events to a Google Calendar, by filling out a Google Form you will be invit
    $ python -m Calendar -t
    ```
 4. Edit the created `config.yaml` as needed.
-5. Create `.yaml` files inside the appropriate `Events/{Game}` folder.
+5. Create `.yaml` files inside the appropriate `Data/{Game}` folder.
 6. Run the following:
    ```bash
    $ python -m Calendar -cwp
