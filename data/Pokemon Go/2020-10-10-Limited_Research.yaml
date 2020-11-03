@@ -1,8 +1,0 @@
-Name: "Limited Research - Meowth"
-Type: "RESEARCH_BREAKTHROUGH"
-Start Time: "2020-10-10T08:00:00"
-End Time: "2020-10-10T22:00:00"
-Researches:
-  - "Meowth [Shiny]"
-  - "Meowth {Alolan}[Shiny]"
-  - "Meowth {Galarian}[Shiny]"
