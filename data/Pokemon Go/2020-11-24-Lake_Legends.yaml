@@ -1,0 +1,33 @@
+Name: "Lake Legends Return"
+Type: "GENERAL_EVENT"
+Start Time: "2020-11-24T13:00:00"
+End Time: "2020-11-30T13:00:00"
+Timezone: "America/Los_Angeles"
+Wild:
+ - "Psyduck [Shiny]"
+ - "Abra [Shiny]"
+ - "Machop [Shiny]"
+ - "Goldeen [Shiny]"
+ - "Magikarp [Shiny]"
+ - "Ralts [Shiny]"
+ - "Surskit"
+ - "Starly"
+ - "Bidoof"
+ - "Shellos (Regional)"
+Eggs:
+  5km:
+    - "Psyduck [Shiny]"
+    - "Abra [Shiny]"
+    - "Machop [Shiny]"
+    - "Goldeen"
+    - "Magikarp [Shiny]"
+    - "Ralts [Shiny]"
+    - "Surskit"
+    - "Starly"
+    - "Bidoof"
+    - "Shellos (Regional)"
+Raids:
+  5*:
+    - "Uxie (Regional)"
+    - "Mesprit (Regional)"
+    - "Azelf (Regional)"

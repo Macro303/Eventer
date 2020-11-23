@@ -1,0 +1,37 @@
+Name: "HOME Event"
+Type: "GENERAL_EVENT"
+Start Time: "2020-11-17T08:00:00"
+End Time: "2020-11-23T22:00:00"
+Wild:
+  - "Sandshrew {Alolan}[Shiny]"
+  - "Zubat [Shiny]"
+  - "Diglett {Alolan}[Shiny]"
+  - "Slowpoke [Shiny]"
+  - "Magnemite [Shiny]"
+  - "Ditto"
+  - "Porygon [Shiny]"
+  - "Hoothoot"
+  - "Remoraid"
+  - "Whismur"
+  - "Lileep [Shiny]"
+  - "Anorith [Shiny]"
+  - "Cottonee"
+  - "Foongus"
+Eggs:
+  5km:
+    - "Nidoran {Female}[Shiny]"
+    - "Nidoran {Male}[Shiny]"
+    - "Slowpoke [Shiny]"
+    - "Omanyte [Shiny]"
+    - "Kabuto [Shiny]"
+    - "Lileep [Shiny]"
+    - "Anorith [Shiny]"
+Raids:
+  1*:
+    - "Vulpix {Alolan}[Shiny]"
+    - "Slowpoke [Shiny]"
+    - "Shinx [Shiny]"
+    - "Timburr [Shiny]"
+    - "Klink [Shiny]"
+Bonus:
+ - "Shiny Meltan available from Mystery Boxes"

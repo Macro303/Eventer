@@ -1,8 +1,0 @@
-Name: "Catch Mastery - Ghost Day"
-Type: "GENERAL_EVENT"
-Start Time: "2020-10-25T08:00:00"
-End Time: "2020-10-25T22:00:00"
-Wild:
-  - "Ghost-Type"
-Research:
-  - "Ghost-Type {Timed}"

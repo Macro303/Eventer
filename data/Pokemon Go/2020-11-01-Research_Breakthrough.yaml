@@ -1,7 +1,0 @@
-Name: "November Research Breakthrough"
-Type: "RESEARCH_BREAKTHROUGH"
-Start Time: "2020-11-01T13:00:00"
-End Time: "2020-11-01T13:00:00"
-Timezone: "America/Los_Angeles"
-Researches:
-  - "Togetic"

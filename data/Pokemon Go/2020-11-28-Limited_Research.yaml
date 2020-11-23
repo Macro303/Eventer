@@ -1,4 +1,7 @@
-Name: "Limited Research - Unannounced"
+Name: "Limited Research - Nidoran"
 Type: "RESEARCH_BREAKTHROUGH"
 Start Time: "2020-11-28T08:00:00"
 End Time: "2020-11-28T22:00:00"
+Research:
+ - "Nidoran {Female}[Shiny]"
+ - "Nidoran {Male}[Shiny]"
