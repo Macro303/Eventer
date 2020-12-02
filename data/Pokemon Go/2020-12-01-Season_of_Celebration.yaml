@@ -1,0 +1,24 @@
+Name: "Season of Celebration"
+Type: "GENERAL_EVENT"
+Start Time: "2020-12-01T08:00:00"
+End Time: "2021-03-01T22:00:00"
+Wild:
+  - "Growlithe [Shiny]"
+  - "Shuckle [Shiny]"
+  - "Electrike [Shiny]"
+  - "Burmy {Plant}[Shiny]"
+  - "Burmy {Trash}[Shiny]"
+  - "Burmy {Sandy}[Shiny]"
+  - "Darumaka"
+  - "Deerling {Summer}"
+  - "Heatmor (Eastern Hemisphere)"
+  - "Durant (Western Hemisphere)"
+Eggs:
+  2km:
+    - "Growlithe [Shiny]"
+    - "Wingull [Shiny]"
+  5km:
+    - "Baltoy [Shiny]"
+    - "Ducklett"
+  5km AS:
+    - "Shinx [Shiny]"

@@ -1,0 +1,33 @@
+Name: "Kalos Special Event"
+Type: "GENERAL_EVENT"
+Start Time: "2020-12-02T10:00:00"
+End Time: "2020-12-08T10:00:00"
+Wild:
+  - "Chespin"
+  - "Fennekin"
+  - "Froakie"
+  - "Bunnelby"
+  - "Fletchling"
+  - "Litleo"
+  - "Noibat"
+  - "Klefki [France-Only]"
+Eggs:
+  2km:
+    - "Bunnelby"
+    - "Fletchling"
+    - "Litleo"
+  5km:
+    - "Chespin"
+    - "Fennekin"
+    - "Froakie"
+  10km:
+    - "Espurr"
+    - "Noibat"
+Raids:
+  1*:
+    - "Litleo"
+    - "Espurr"
+Research:
+  - "Bunnelby"
+  - "Fletchling"
+  - "Litlep"

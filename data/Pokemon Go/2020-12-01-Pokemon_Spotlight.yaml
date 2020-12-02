@@ -1,0 +1,8 @@
+Name: "Pokemon Spotlight Hour"
+Type: "POKEMON_SPOTLIGHT_HOUR"
+Start Time: "2020-12-01T18:00:00"
+End Time: "2020-12-01T19:00:00"
+Wild:
+  - "Seel [Shiny]"
+Bonuses:
+  - "2x Evolve XP"

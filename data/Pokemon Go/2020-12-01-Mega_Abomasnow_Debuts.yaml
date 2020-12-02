@@ -1,0 +1,10 @@
+Name: "Mega Abomasnow Debuts"
+Type: "RAID_BATTLE"
+Start Time: "2020-12-01T13:00:00"
+End Time: "2021-01-01T13:00:00"
+Timezone: "America/Los_Angeles"
+Raids:
+  Mega:
+    - "Abomasnow"
+    - "Charizard X"
+    - "Gengar"
