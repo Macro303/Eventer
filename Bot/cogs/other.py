@@ -1,4 +1,5 @@
 import logging
+from typing import List, Tuple
 
 from discord import Embed
 from discord.ext import commands
@@ -8,22 +9,22 @@ from Bot import CONFIG
 
 LOGGER = logging.getLogger(__name__)
 
-
-def get_comm_list(comm_list, public_list, private_list, prefix=CONFIG['Prefix']):
-    for comm in sorted(comm_list, key=lambda x: x.name):
-        names = [comm.name]
-        if comm.alias:
-            names.extend(comm.alias)
-        for name in names:
-            if comm.usage is not None:
-                usage = f"{prefix}{name} {comm.usage}".strip()
-                if comm.hidden:
-                    private_list.append(f" - `{usage}`")
-                else:
-                    public_list.append(f" - `{usage}`")
-            if isinstance(comm, Group):
-                public_list, private_list = get_comm_list(comm.commands, public_list, private_list, f"{prefix}{name} ")
-    return public_list, private_list
+def parse_commands(comm_list, output: List[str], add_hidden: bool, parent_name: str = '') -> List[str]:
+    for comm in sorted(comm_list, key=lambda x: (isinstance(x, Group), x.name)):
+        usage = f"{CONFIG['Prefix']}{parent_name}{comm.name} {comm.usage}".strip()
+        if isinstance(comm, Group):
+            output.append(f"__{parent_name}{comm.name}__")
+            if comm.aliases:
+                names = [comm.name, *comm.aliases]
+                output.append(f"Aliases: {', '.join(names)}")
+            if comm.usage is not None and (add_hidden or not comm.hidden):
+                output.append(f" - `{usage}`")
+            output = parse_commands(comm.commands, output, add_hidden, f"{parent_name}{comm.name} ")
+        else:
+            if comm.usage is not None and (add_hidden or not comm.hidden):
+                output.append(f" - `{usage}`")
+    
+    return output
 
 
 class OtherCog(commands.Cog, name='Other Commands'):
@@ -41,33 +42,16 @@ class OtherCog(commands.Cog, name='Other Commands'):
         )
         embed.set_thumbnail(url=self.bot.user.avatar_url)
 
-        public_list = []
-        private_list = []
-        other_list = []
-        cogs = [c for c in self.bot.cogs.keys()]
-        for cog in cogs:
+        for cog in sorted([c for c in self.bot.cogs.keys()]):
             if cog == 'Other Commands':
-                for comm in sorted(self.bot.get_cog(cog).get_commands(), key=lambda x: x.name):
-                    names = [comm.name]
-                    if comm.alias:
-                        names.extend(comm.alias)
-                    for name in names:
-                        if comm.usage is not None:
-                            usage = f"{CONFIG['Prefix']}{name} {comm.usage}".strip()
-                            other_list.append(f" - `{usage}`")
-            else:
-                public_temp, private_temp = get_comm_list(self.bot.get_cog(cog).get_commands(), [], [])
-                for item in public_temp:
-                    public_list.append(item)
-                for item in private_temp:
-                    private_list.append(item)
-
-        if public_list:
-            embed.add_field(name='Public Commands', value='\n'.join(public_list), inline=False)
-        if private_list and 'Moderator' in [x.name for x in ctx.author.roles]:
-            embed.add_field(name='Private Commands', value='\n'.join(private_list), inline=False)
-        if other_list:
-            embed.add_field(name='Other Commands', value='\n'.join(other_list), inline=False)
+                continue
+            comm_list = parse_commands(self.bot.get_cog(cog).get_commands(), [], 'Moderator' in [x.name for x in ctx.author.roles])
+            if comm_list:
+                embed.add_field(name=cog, value='\n'.join(comm_list), inline=False)
+        
+        comm_list = parse_commands(self.bot.get_cog('Other Commands').get_commands(), [], 'Moderator' in [x.name for x in ctx.author.roles])
+        if comm_list:
+            embed.add_field(name='Other Comamnds', value='\n'.join(comm_list), inline=False)
 
         embed.set_footer(
             text=f"Requested by {ctx.author.name}",
