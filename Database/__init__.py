@@ -2,7 +2,8 @@ import logging
 from enum import Enum
 from pathlib import Path
 
-from Database.database import db, EventType, User, PokemonGo, WizardsUnite, WorldExplorers
+from Database.database import db, initialize_enums, PokemonGo, PokemonGoEventType, PokemonGoEvent, WizardsUnite, \
+    WizardsUniteEventType, WizardsUniteEvent, Catan, CatanEventType, CatanEvent
 from Database.enum_converter import EnumConverter
 
 TOP_DIR = Path(__file__).resolve().parent.parent

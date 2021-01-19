@@ -1,5 +1,5 @@
 import logging
-from typing import List, Tuple
+from typing import List
 
 from discord import Embed
 from discord.ext import commands
@@ -9,6 +9,7 @@ from Bot import CONFIG
 
 LOGGER = logging.getLogger(__name__)
 
+
 def parse_commands(comm_list, output: List[str], add_hidden: bool, parent_name: str = '') -> List[str]:
     for comm in sorted(comm_list, key=lambda x: (isinstance(x, Group), x.name)):
         usage = f"{CONFIG['Prefix']}{parent_name}{comm.name} {comm.usage}".strip()
@@ -16,14 +17,15 @@ def parse_commands(comm_list, output: List[str], add_hidden: bool, parent_name: 
             output.append(f"__{parent_name}{comm.name}__")
             if comm.aliases:
                 names = [comm.name, *comm.aliases]
-                output.append(f"Aliases: {', '.join(names)}")
+                names_str = f", {parent_name}".join(names)
+                output.append(f"Aliases: {parent_name}{names_str}")
             if comm.usage is not None and (add_hidden or not comm.hidden):
                 output.append(f" - `{usage}`")
             output = parse_commands(comm.commands, output, add_hidden, f"{parent_name}{comm.name} ")
         else:
             if comm.usage is not None and (add_hidden or not comm.hidden):
                 output.append(f" - `{usage}`")
-    
+
     return output
 
 
@@ -45,11 +47,13 @@ class OtherCog(commands.Cog, name='Other Commands'):
         for cog in sorted([c for c in self.bot.cogs.keys()]):
             if cog == 'Other Commands':
                 continue
-            comm_list = parse_commands(self.bot.get_cog(cog).get_commands(), [], 'Moderator' in [x.name for x in ctx.author.roles])
+            comm_list = parse_commands(self.bot.get_cog(cog).get_commands(), [],
+                                       'Moderator' in [x.name for x in ctx.author.roles])
             if comm_list:
                 embed.add_field(name=cog, value='\n'.join(comm_list), inline=False)
-        
-        comm_list = parse_commands(self.bot.get_cog('Other Commands').get_commands(), [], 'Moderator' in [x.name for x in ctx.author.roles])
+
+        comm_list = parse_commands(self.bot.get_cog('Other Commands').get_commands(), [],
+                                   'Moderator' in [x.name for x in ctx.author.roles])
         if comm_list:
             embed.add_field(name='Other Comamnds', value='\n'.join(comm_list), inline=False)
 

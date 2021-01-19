@@ -8,15 +8,15 @@ from pony.orm import db_session
 from pytz import timezone
 
 from Bot import load_colour, insert_calendar_event
-from Database import PokemonGo, PokemonGoEventType, PokemonGoEvent
+from Database import Catan, CatanEventType, CatanEvent
 
 LOGGER = logging.getLogger(__name__)
 
 
-def generate_embed(event: PokemonGoEvent, author: Member) -> Embed:
+def generate_embed(event: CatanEvent, author: Member) -> Embed:
     embed = Embed(title=event.name, colour=load_colour(event.event_type.colour_code))
 
-    embed.add_field(name='Game', value='Pokemon Go')
+    embed.add_field(name='Game', value='Catan: World Explorers')
     embed.add_field(name='Type', value=event.event_type.name.replace('_', ' ').title())
     if event.all_day:
         if event.start_datetime.date() == event.end_datetime.date():
@@ -35,21 +35,21 @@ def generate_embed(event: PokemonGoEvent, author: Member) -> Embed:
     return embed
 
 
-class PokemonGoCog(commands.Cog, name='Pokemon Go Commands'):
+class CatanCog(commands.Cog, name='Catan: World Explorers Commands'):
     def __init__(self, bot):
         self.bot = bot
 
     @commands.group(
-        name='PokemonGo',
-        aliases=['PoGo', 'Pokemon'],
+        name='Catan',
+        aliases=['WorldExplorers', 'WE'],
         pass_context=True,
         invoke_without_command=True,
         case_insensitive=True,
         usage='<Username|str>'
     )
-    async def pokemon_group(self, ctx, username: str):
+    async def catan_group(self, ctx, username: str):
         with db_session:
-            result = PokemonGo.get(username=username)
+            result = Catan.get(username=username)
             if result and result.event_types:
                 await ctx.send(f"{username} is following: " + ', '.join([x.name for x in result.event_types]))
                 await ctx.message.delete()
@@ -59,39 +59,39 @@ class PokemonGoCog(commands.Cog, name='Pokemon Go Commands'):
             else:
                 await ctx.message.add_reaction('❎')
 
-    @pokemon_group.command(
+    @catan_group.command(
         name='Join',
         pass_context=True,
         usage='<Username|str> <Email|str>'
     )
     async def join(self, ctx, username: str, email: str):
         with db_session:
-            PokemonGo.safe_insert(username, email)
+            Catan.safe_insert(username, email)
             await ctx.message.add_reaction('✅')
 
-    @pokemon_group.command(
+    @catan_group.command(
         name='Leave',
         pass_context=True,
         usage='<Username|str>'
     )
     async def leave(self, ctx, username: str):
         with db_session:
-            result = PokemonGo.get(username=username)
+            result = Catan.get(username=username)
             if result:
                 result.delete()
             await ctx.message.add_reaction('✅')
 
-    @pokemon_group.command(
+    @catan_group.command(
         name='Edit',
         pass_context=True,
         usage='<Username|str> [<Type|str>]'
     )
     async def edit_types(self, ctx, username: str, *type_names: str):
         with db_session:
-            user = PokemonGo.get(username=username)
+            user = Catan.get(username=username)
             if user:
                 for type_name in type_names:
-                    event_type = PokemonGoEventType.find(name=type_name)
+                    event_type = CatanEventType.find(name=type_name)
                     if event_type:
                         if event_type in user.event_types:
                             user.event_types.remove(event_type)
@@ -105,7 +105,7 @@ class PokemonGoCog(commands.Cog, name='Pokemon Go Commands'):
                 LOGGER.warning(f"Unable to find: {username}")
                 await ctx.message.add_reaction('❎')
 
-    @pokemon_group.group(
+    @catan_group.group(
         name='Events',
         aliases=['Event'],
         pass_context=True,
@@ -115,7 +115,7 @@ class PokemonGoCog(commands.Cog, name='Pokemon Go Commands'):
     )
     async def event_group(self, ctx):
         with db_session:
-            results = PokemonGoEvent.select()[:]
+            results = CatanEvent.select()[:]
             if results:
                 for event in results:
                     await ctx.send(embed=generate_embed(event, ctx.author))
@@ -131,7 +131,7 @@ class PokemonGoCog(commands.Cog, name='Pokemon Go Commands'):
     )
     async def event_type_list(self, ctx):
         with db_session:
-            await ctx.send(', '.join([x.name for x in PokemonGoEventType.select()[:]]))
+            await ctx.send(', '.join([x.name for x in CatanEventType.select()[:]]))
             await ctx.message.delete()
 
     @event_group.command(
@@ -143,12 +143,12 @@ class PokemonGoCog(commands.Cog, name='Pokemon Go Commands'):
     async def create_event(self, ctx, name: str, start_time: str, end_time: str, type_name: str,
                            local_timezone: bool = False, all_day: bool = False):
         with db_session:
-            event = PokemonGoEvent.get(name=name)
+            event = CatanEvent.get(name=name)
             if event:
                 LOGGER.warning(f"{name} already exists")
                 await ctx.message.add_reaction('❎')
             else:
-                event_type = PokemonGoEventType.find(type_name)
+                event_type = CatanEventType.find(type_name)
                 if event_type:
                     try:
                         start_datetime = datetime.strptime(start_time, '%y-%m-%d %H:%M')
@@ -160,8 +160,7 @@ class PokemonGoCog(commands.Cog, name='Pokemon Go Commands'):
                             end_datetime = datetime.strptime(
                                 timezone('America/Los_Angeles').localize(end_datetime).astimezone(
                                     timezone('Pacific/Auckland')).strftime('%y-%m-%d %H:%M'), '%y-%m-%d %H:%M')
-                        event = PokemonGoEvent.safe_insert(name, start_datetime, end_datetime, event_type,
-                                                           all_day=all_day)
+                        event = CatanEvent.safe_insert(name, start_datetime, end_datetime, event_type, all_day=all_day)
                         create_google_event(event)
                         await ctx.send(embed=generate_embed(event, ctx.author))
                         await ctx.message.delete()
@@ -174,10 +173,10 @@ class PokemonGoCog(commands.Cog, name='Pokemon Go Commands'):
 
 
 def setup(bot):
-    bot.add_cog(PokemonGoCog(bot))
+    bot.add_cog(CatanCog(bot))
 
 
-def create_google_event(event: PokemonGoEvent):
+def create_google_event(event: CatanEvent):
     event_json = {
         'summary': event.name,
         'start': {
@@ -186,7 +185,7 @@ def create_google_event(event: PokemonGoEvent):
         'end': {
             'timeZone': 'Pacific/Auckland'
         },
-        'attendees': [x.event_dict() for x in PokemonGo.select(lambda x: event.event_type in x.event_types)],
+        'attendees': [x.event_dict() for x in CatanEvent.select(lambda x: event.event_type in x.event_types)],
         'reminders': {
             'useDefault': False,
             'overrides': []

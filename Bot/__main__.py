@@ -1,14 +1,15 @@
 import logging
 
 import discord
-from discord.ext import commands
 from aiohttp.client_exceptions import ClientConnectorError
+from discord.ext import commands
 
 from Bot import CONFIG
+from Database import initialize_enums
 from Logger import init_logger
 
 LOGGER = logging.getLogger(__name__)
-COGS = ['Bot.cogs.pokemon_go', 'Bot.cogs.wizards_unite', 'Bot.cogs.world_explorers', 'Bot.cogs.other']
+COGS = ['Bot.cogs.pokemon_go', 'Bot.cogs.wizards_unite', 'Bot.cogs.catan', 'Bot.cogs.other']
 bot = commands.Bot(command_prefix=CONFIG['Prefix'], case_insensitive=True)
 
 
@@ -19,6 +20,7 @@ async def on_ready():
     for cog in COGS:
         bot.load_extension(cog)
     await bot.change_presence(activity=discord.Game(name='with the Calendar'))
+    initialize_enums()
 
 
 @bot.event
@@ -27,7 +29,7 @@ async def on_command_error(ctx, error):
 
 
 if __name__ == "__main__":
-    init_logger('Jarvis_Bot')
+    init_logger('Eventer-Bot')
     try:
         if CONFIG['Token']:
             bot.run(CONFIG['Token'], bot=True, reconnect=True)

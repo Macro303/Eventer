@@ -19,13 +19,12 @@
  - [Python: 3.9.1](https://www.python.org/)
  - [pip: 20.3.3](https://pypi.org/project/pip/)
  - [PyYAML: 5.3.1](https://pypi.org/project/PyYAML/)
- - [Pony]
- - [discord.py]
-
-> - [google-api-python-client: 1.12.8](https://pypi.org/project/google-api-python-client/)
-> - [google-auth-httplib2: 0.0.4](https://pypi.org/project/google-auth-httplib2/)
-> - [google-auth-oauthlib: 0.4.2](https://pypi.org/project/google-auth-oauthlib/)
-? - [pytz: 2020.4](https://pypi.org/project/pytz/)
+ - [discord.py: 1.6.0](https://pypi.org/project/discord.py/)
+ - [pony: 0.7.14](https://pypi.org/project/pony/)
+ - [google-api-python-client: 1.12.8](https://pypi.org/project/google-api-python-client/)
+ - [google-auth-httplib2: 0.0.4](https://pypi.org/project/google-auth-httplib2/)
+ - [google-auth-oauthlib: 0.4.2](https://pypi.org/project/google-auth-oauthlib/)
+ - [pytz: 2020.5](https://pypi.org/project/pytz/)
 
 ## Execution
 1. Execute the following to generate the default files:
