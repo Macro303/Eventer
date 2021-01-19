@@ -19,18 +19,14 @@ if config_file.exists():
         CONFIG = yaml.safe_load(yaml_file) or {
             'Prefix': '?',
             'Token': None,
-            'Pokemon Go': None,
-            'Wizards Unite': None,
-            'Catan': None
+            'Calendar ID': None
         }
 else:
     config_file.touch()
     CONFIG = {
         'Prefix': '?',
         'Token': None,
-        'Pokemon Go': None,
-        'Wizards Unite': None,
-        'Catan': None
+        'Calendar ID': None
     }
 with open(config_file, 'w', encoding='UTF-8') as yaml_file:
     yaml.safe_dump(CONFIG, yaml_file)
@@ -64,9 +60,9 @@ def get_creds():
     return creds
 
 
-def insert_calendar_event(game: str, event_body: Dict[str, Any]):
+def insert_calendar_event(event_body: Dict[str, Any]):
     try:
-        event = SERVICE.events().insert(calendarId=CONFIG[game], body=event_body).execute()
+        event = SERVICE.events().insert(calendarId=CONFIG['Calendar ID'], body=event_body).execute()
         if 'date' in event_body['start']:
             LOGGER.info(f"{event_body['start']['date']}|{event_body['summary']} was created")
         else:

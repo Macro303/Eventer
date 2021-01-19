@@ -9,7 +9,7 @@ from Database import initialize_enums
 from Logger import init_logger
 
 LOGGER = logging.getLogger(__name__)
-COGS = ['Bot.cogs.pokemon_go', 'Bot.cogs.wizards_unite', 'Bot.cogs.catan', 'Bot.cogs.other']
+COGS = ['Bot.cogs.eventer', 'Bot.cogs.other']
 bot = commands.Bot(command_prefix=CONFIG['Prefix'], case_insensitive=True)
 
 
