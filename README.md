@@ -6,8 +6,8 @@
 [![Contributors](https://img.shields.io/github/contributors/Macro303/Eventer.svg?style=flat-square)](https://github.com/Macro303/Eventer/graphs/contributors)
 [![License](https://img.shields.io/github/license/Macro303/Eventer.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-*TODO*
-[Bot invite link](https://discord.com/api/oauth2/authorize?client_id=738599793236115558&permissions=67464256&scope=bot)
+Using this discord bot you can add events to a Google Calendar for the below Niantic games. The bot will allow you to select specific types of events to be invited to rather than all events.  
+You can invite this bot to your own server via this [link](https://discord.com/api/oauth2/authorize?client_id=738599793236115558&permissions=67464256&scope=bot)
 
 ### Calendars
 *If you want the full calendar and not specific events*
@@ -27,20 +27,21 @@
  - [pytz: 2020.5](https://pypi.org/project/pytz/)
 
 ## Execution
-1. Execute the following to generate the default files:
+1. Create a project on [Google API Console](https://console.developers.google.com/apis/dashboard), adding Google Calendar APIs to the project.
+2. Create a **OAuth 2.0 Client ID** and download the `credentials.json` file.
+3. Execute the following to generate the default files:
    ```bash
    $ pip install -r requirements.txt
    $ python -m Bot
    ```
-2. Update the generated `config.yaml` with your Discord Token and preferred Prefix
-3. Run the following:
+4. Update the generated `config.yaml` with your Discord Token, preferred Prefix and Google Calendar ID
+5. Run the following:
    ```bash
    $ python -m Bot
    ```
 
 
 ## Socials
-[![Discord | The Bot Playground](https://discord.com/api/v6/guilds/797975024907976705/widget.png?style=banner2)](https://discord.gg/wsbSUYqDRP)
 [![Discord | The Playground](https://discord.com/api/v6/guilds/618581423070117932/widget.png?style=banner2)](https://discord.gg/nqGMeGg)  
  - WLG Raids & Sightings [Discord Invite](https://discord.gg/47gyFPE)
  - Wizards Unite - Wellington [Discord Invite](https://discord.gg/dy3ZhkT)
